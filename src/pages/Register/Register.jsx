@@ -1,12 +1,25 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
     const handleRegister=(e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password);
+
+        // create new user
+
+        createUser(email, password)
+        .then(result => {
+            console.log(result.user);
+        })
+        .catch(error => {
+            console.error(error);
+        })
+
     }
     return (
         <div className="w-1/2 mx-auto">
@@ -65,7 +78,7 @@ const Register = () => {
                             className=" text-blue-600 font-bold"
                             to={"/login"}>
                             Login
-                        </Link>{" "}
+                        </Link>
                     </p>
             </form>
         </div>
