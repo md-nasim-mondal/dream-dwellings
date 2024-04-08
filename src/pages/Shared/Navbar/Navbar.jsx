@@ -1,21 +1,32 @@
-import { IoMenu } from "react-icons/io5";
-import {Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
 import userDefaultPic from "../../../assets/user.png";
+import { IoMenu } from "react-icons/io5";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
 
+    const handleSignOut = () => {
+        logOut().then().catch();
+    };
 
-    // const handleSignOut = () => {
-    //     logOut()
-    //     .then()
-    //     .catch()
-    // }
-
-    const navLinks = <>
-        <li className="mr-4"><NavLink to='/'>Home</NavLink></li>
-        <li className="mr-4"><NavLink to='/updateProfile'>Update Profile</NavLink></li>
-        <li className="mr-4"><NavLink to='/profile'>Profile</NavLink></li>
-        <li className="mr-4"><NavLink to='/register'>Register</NavLink></li>
-    </>
+    const navLinks = (
+        <>
+            <li>
+                <NavLink to="/">Home</NavLink>
+            </li>
+            {user && (
+                <>
+                    <li>
+                        <NavLink to="/updateProfile">Update Profile</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/profile">UserProfile</NavLink>
+                    </li>
+                </>
+            )}
+        </>
+    );
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -24,7 +35,7 @@ const Navbar = () => {
                         <div
                             tabIndex={0}
                             role="button"
-                            className="btn btn-ghost lg:hidden">
+                            className="btn-ghost lg:hidden">
                             <IoMenu />
                         </div>
                         <ul
@@ -33,35 +44,43 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">DreamDwellings</a>
+                    <a className="btn-ghost md:text-3xl">DreamDwellings</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        {navLinks}
-                    </ul>
+                    <ul className="menu menu-horizontal px-1">{navLinks}</ul>
                 </div>
                 <div className="navbar-end">
-                <div
-                    tabIndex={0}
-                    role="button"
-                    className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        <img
-                            alt="Tailwind CSS Navbar component"
-                            src={userDefaultPic}
-                        />
-                    </div>
-                </div>
-                <Link to={"/login"}>
-                        <button className="btn">Login</button>
-                    </Link>
-                {/* {user ? (
-                    <button onClick={handleSignOut} className="btn">Sign Out</button>
-                ) : (
-                    <Link to={"/login"}>
-                        <button className="btn">Login</button>
-                    </Link>
-                )} */}
+                    {user ? (
+                        <>
+                            <div
+                                tabIndex={0}
+                                role="button"
+                                className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img
+                                        alt="Tailwind CSS Navbar component"
+                                        src={userDefaultPic}
+                                    />
+                                </div>
+                            </div>
+                            <button onClick={handleSignOut} className="btn">
+                                Sign Out
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <Link to={"/login"}>
+                                <button className="btn btn-outline btn-primary mr-0.5 md:mr-4">
+                                    Login
+                                </button>
+                            </Link>
+                            <Link to={"/register"}>
+                                <button className="btn btn-outline btn-primary">
+                                    Register
+                                </button>
+                            </Link>
+                        </>
+                    )}
                 </div>
             </div>
         </div>
