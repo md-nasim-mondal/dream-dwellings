@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useContext, useState } from "react";
 import userDefaultPic from "../../../assets/user.png";
 import { IoClose, IoMenu } from "react-icons/io5";
@@ -12,10 +14,10 @@ const Navbar = () => {
     const handleSignOut = () => {
         logOut()
         .then(result => {
-            console.log("LogOut Successfully",result);
+            toast.warn("LogOut Successfully",result);
         })
         .catch(error => {
-            console.error(error.message);
+            toast.error(error.message);
         });
     };
 
@@ -99,6 +101,7 @@ const Navbar = () => {
                     )}
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

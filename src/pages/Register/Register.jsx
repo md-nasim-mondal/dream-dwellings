@@ -7,7 +7,7 @@ import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { createUser, setUser, logOut } = useContext(AuthContext);
+    const { createUser, setUser, logOut} = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
 
     const handleRegister = (e) => {
@@ -17,6 +17,7 @@ const Register = () => {
         const photo = form.get("photo");
         const email = form.get("email");
         const password = form.get("password");
+        const accepted = e.target.terms.checked;
         if (password.length < 6) {
             return toast.error("Password length should be minimum 6 digit");
         }
@@ -29,6 +30,9 @@ const Register = () => {
             return toast.error(
                 "Password must contain at least one uppercase letter"
             );
+        }if (!accepted) {
+            return toast.warn("Please accept our terms and conditions!");
+            
         }
         // create user
         createUser(email, password)
@@ -115,7 +119,13 @@ const Register = () => {
                             )}
                         </span>
                     </div>
-                    <div className="form-control mt-6">
+                    <div className="mb-2">
+                        <input type="checkbox" name="terms" id="terms" />
+                        <label className="ml-2" htmlFor="terms">
+                            Accept our <a className="text-blue-500" href="#">terms and conditions</a>
+                        </label>
+                    </div>
+                    <div className="form-control my-2">
                         <button className="btn btn-primary">Register</button>
                     </div>
                     <p className="text-center mt-4">
