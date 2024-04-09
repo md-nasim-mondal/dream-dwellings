@@ -1,3 +1,5 @@
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -15,8 +17,15 @@ const Register = () => {
         const photo = form.get("photo");
         const email = form.get("email");
         const password = form.get("password");
-        console.log(name, photo, email, password);
-
+        if(password.length < 6){
+            return toast.error("Password length should be minimum 6 digit");
+        }
+        if(!/[a-z]/.test(password)){
+            return toast.error("Password must contain at least one lowercase letter");
+        }
+        if(!/[A-Z]/.test(password)){
+            return toast.error("Password must contain at least one uppercase letter");
+        }
         // create user
         createUser(email, password)
             .then((result) => {
@@ -25,15 +34,15 @@ const Register = () => {
                     displayName: `${name}`, photoURL: `${photo}`
                 })
                     .then(() => {
-                        console.log('profile-updated successfully');
+                        toast.success('Successfully Registered !!')
                     })
                     .catch(error => {
-                        console.log(error.message);
+                        toast.error(error.message);
                     })
                 logOut();
                 setUser(null);
             })
-            .catch((error) => console.error(error.message));
+            .catch((error) => toast.error(error.message));
 
 
     };
@@ -116,6 +125,7 @@ const Register = () => {
                     </p>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 };

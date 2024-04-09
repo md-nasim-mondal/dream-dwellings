@@ -20,19 +20,38 @@ const UpdateProfile = () => {
     }
     return (
         <div>
-            <form onSubmit={handleUpdate}>
-                <div>
-                    <label htmlFor="userName">User Name</label>
-                    <input type="text" name="userName" id="userName" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-                </div>
-                <div>
-                    <label htmlFor="userPhoto">User Photo URL</label>
-                    <input type="url" name="userPhoto" id="userPhoto" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
-                </div>
-                <div>
-                    <button type="submit" className="btn btn-primary border-none">Save Change</button>
-                </div>
-            </form>
+            <h2 className="text-3xl my-10 text-center">Update Your Profile</h2>
+                <form onSubmit={handleUpdate} className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl">
+                    <div className="form-control">
+                        <label htmlFor="userName" className="label">
+                            <span className="label-text">Your New Name</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="userName"
+                            id="userName"
+                            placeholder="Enter your new name"
+                            className="input input-bordered"
+                            required
+                        />
+                    </div>
+                    <div className="form-control relative">
+                        <label htmlFor="userPhoto" className="label">
+                            <span className="label-text">New Photo URL</span>
+                        </label>
+                        <input
+                            type="url"
+                            name="userPhoto"
+                            id="userPhoto"
+                            placeholder="Enter your new photo URL"
+                            className="input input-bordered"
+                            required
+                        />
+                    </div>
+                    <div className="form-control mt-6">
+                        <button type="submit" className="btn btn-primary">Update</button>
+                    </div>
+                </form>
         </div>
     );
 };
