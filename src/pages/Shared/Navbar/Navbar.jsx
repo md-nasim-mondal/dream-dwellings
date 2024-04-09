@@ -10,7 +10,13 @@ const Navbar = () => {
     const displayName = user?.displayName;
 
     const handleSignOut = () => {
-        logOut().then().catch();
+        logOut()
+        .then(result => {
+            console.log("LogOut Successfully",result);
+        })
+        .catch(error => {
+            console.error(error.message);
+        });
     };
 
     const navLinks = (
