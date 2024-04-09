@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -8,50 +8,81 @@ const Login = () => {
     const [loginError, setLoginError] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
 
-    const {signIn} = useContext(AuthContext);
+    const { signIn,googleLogin, setUser } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const handleLogin = (e) => {
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
-        const email = form.get('email');
-        const password = form.get('password');
+        const email = form.get("email");
+        const password = form.get("password");
         console.log(email, password);
 
         setLoginError(null);
 
         signIn(email, password)
-        .then(result => {
-            console.log(result.user);
-            
-            // navigate after login
-            navigate(location?.state ? location.state : '/');
-            Swal.fire({
-                text: 'LogIn Successfully!!',
-                icon: 'success',
-                showConfirmButton: false,
-                position: 'top-right',
-                timer: 1500 
-              });
-        })
-        .catch(error => {
-            Swal.fire({
-                text: 'Please Check Your Email and Password than Try Again!!',
-                icon: 'error',
-                showConfirmButton: false,
-                position: 'top-right',
-                timer: 1500
-              });
-              setLoginError(error.message)
-        })
+            .then((result) => {
+                console.log(result.user);
 
-    }
+                // navigate after login
+                navigate(location?.state ? location.state : "/");
+                Swal.fire({
+                    text: "LogIn Successfully!!",
+                    icon: "success",
+                    showConfirmButton: false,
+                    position: "top-right",
+                    timer: 1500,
+                });
+            })
+            .catch((error) => {
+                Swal.fire({
+                    text: "Please Check Your Email and Password than Try Again!!",
+                    icon: "error",
+                    showConfirmButton: false,
+                    position: "top-right",
+                    timer: 1500,
+                });
+                setLoginError(error.message);
+            });
+    };
+    const handleGoogleLogin = (e) => {
+        e.preventDefault();
+        googleLogin()
+            .then((result) => {
+                console.log(result);
+                setUser(result.user);
+                // navigate(location.state)
+                navigate(location?.state ? location.state : "/");
+                Swal.fire({
+                    text: "LogIn Successfully With Google!!",
+                    icon: "success",
+                    showConfirmButton: false,
+                    position: "top-right",
+                    timer: 1500,
+                });
+
+            })
+            .catch((error) => {
+                Swal.fire({
+                    text: "Please Check Your Email and Password than Try Again!!",
+                    icon: "error",
+                    showConfirmButton: false,
+                    position: "top-right",
+                    timer: 1500,
+                });
+                setLoginError(error.message);
+            });
+    };
     return (
         <div>
             <div>
-                <h2 className="text-3xl my-10 text-center">Login your account</h2>
-                <form onSubmit={handleLogin} className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl">
+                <h2 className="text-3xl my-10 text-center">
+                    Login your account
+                </h2>
+                <form
+                    onSubmit={handleLogin}
+                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl">
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email address</span>
@@ -92,11 +123,23 @@ const Login = () => {
                             </a>
                         </label>
                     </div>
-                    {loginError && <p className='text-red-500'>{loginError}</p> }
+                    {loginError && <p className="text-red-500">{loginError}</p>}
                     <div className="form-control mt-6">
-                        <button className="btn btn-ghost  btn-outline bg-[#23BE0A] border-none">Login</button>
+                        <button className="btn btn-ghost  btn-outline bg-[#23BE0A] border-none">
+                            Login
+                        </button>
                     </div>
-                    <p className="text-center mt-4">Don&apos;t have an account? <Link className=" text-blue-600 font-bold" to={"/register"}>Register</Link> </p>
+                    <p className="text-center mt-4">
+                        Don&apos;t have an account?{" "}
+                        <Link
+                            className=" text-blue-600 font-bold"
+                            to={"/register"}>
+                            Register
+                        </Link>{" "}
+                    </p>
+                    <div>
+                        <button onClick={handleGoogleLogin} className="btn btn-accent">Login With Google</button>
+                    </div>
                 </form>
             </div>
         </div>

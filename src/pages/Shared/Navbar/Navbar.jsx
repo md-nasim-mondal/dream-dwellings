@@ -38,7 +38,7 @@ const Navbar = () => {
                 <NavLink
                     className={({ isActive }) =>
                         !isActive
-                            ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
+                            ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mr-0.5 md:mr-2"
                             : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost mr-0.5 md:mr-2"
                     }
                     to="/">
@@ -51,7 +51,7 @@ const Navbar = () => {
                         <NavLink
                             className={({ isActive }) =>
                                 !isActive
-                                    ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
+                                    ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mr-0.5 md:mr-2"
                                     : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost mr-0.5 md:mr-2"
                             }
                             to="/updateProfile">
@@ -62,7 +62,7 @@ const Navbar = () => {
                         <NavLink
                             className={({ isActive }) =>
                                 !isActive
-                                    ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
+                                    ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mr-0.5 md:mr-2"
                                     : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost  mr-0.5 md:mr-2"
                             }
                             to="/profile">
