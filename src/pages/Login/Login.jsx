@@ -1,8 +1,12 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
+    
+    const [showPassword, setShowPassword] = useState(false);
+
     const {signIn} = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
@@ -44,17 +48,26 @@ const Login = () => {
                             required
                         />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control relative">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             name="password"
                             placeholder="Enter your password"
                             className="input input-bordered"
                             required
                         />
+                        <span
+                            className="absolute right-[2%] top-[45%]"
+                            onClick={() => setShowPassword(!showPassword)}>
+                            {showPassword ? (
+                                <FaEye></FaEye>
+                            ) : (
+                                <FaEyeSlash></FaEyeSlash>
+                            )}
+                        </span>
                         <label className="label">
                             <a
                                 href="#"
