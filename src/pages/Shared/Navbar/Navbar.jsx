@@ -1,9 +1,8 @@
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import userDefaultPic from "../../../assets/user.png";
 import { IoClose, IoMenu } from "react-icons/io5";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -13,26 +12,62 @@ const Navbar = () => {
 
     const handleSignOut = () => {
         logOut()
-        .then(result => {
-            toast.warn("LogOut Successfully",result);
-        })
-        .catch(error => {
-            toast.error(error.message);
-        });
+            .then(() => {
+                Swal.fire({
+                    text: "LogOut Successful",
+                    icon: "success",
+                    showConfirmButton: false,
+                    position: "top-right",
+                    timer: 1500,
+                });
+            })
+            .catch((error) => {
+                Swal.fire({
+                    text: `${error.message}`,
+                    icon: "error",
+                    showConfirmButton: false,
+                    position: "top-right",
+                    timer: 1500,
+                });
+            });
     };
 
     const navLinks = (
         <>
             <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink
+                    className={({ isActive }) =>
+                        !isActive
+                            ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
+                            : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost mr-0.5 md:mr-2"
+                    }
+                    to="/">
+                    Home
+                </NavLink>
             </li>
             {user && (
                 <>
                     <li>
-                        <NavLink to="/updateProfile">Update Profile</NavLink>
+                        <NavLink
+                            className={({ isActive }) =>
+                                !isActive
+                                    ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
+                                    : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost mr-0.5 md:mr-2"
+                            }
+                            to="/updateProfile">
+                            Update Profile
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/profile">UserProfile</NavLink>
+                        <NavLink
+                            className={({ isActive }) =>
+                                !isActive
+                                    ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
+                                    : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost  mr-0.5 md:mr-2"
+                            }
+                            to="/profile">
+                            UserProfile
+                        </NavLink>
                     </li>
                 </>
             )}
@@ -45,15 +80,19 @@ const Navbar = () => {
                     <div className="dropdown">
                         <div
                             tabIndex={0}
-                            onClick={()=> setOpen(!open)}
+                            onClick={() => setOpen(!open)}
                             role="button"
                             className="btn-ghost lg:hidden">
-                            {open ? <IoClose className="text-2xl" /> : <IoMenu className="text-2xl" />}
+                            {open ? (
+                                <IoClose className="text-2xl" />
+                            ) : (
+                                <IoMenu className="text-2xl" />
+                            )}
                         </div>
                         <ul
                             tabIndex={0}
                             className={`menu menu-sm dropdown-content
-                                ${open ? '' : 'hidden'}
+                                ${open ? "" : "hidden"}
                                 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52`}>
                             {navLinks}
                         </ul>
@@ -70,40 +109,48 @@ const Navbar = () => {
                                 className="tooltip tooltip-left"
                                 data-tip={displayName}>
                                 <div
-                                tabIndex={0}
-                                role="button"
-                                className="btn btn-ghost btn-circle avatar">
-                                <div className="w-12 rounded-full">
-                                    <img
-                                        alt="Tailwind CSS Navbar component"
-                                        src={photoURL || userDefaultPic}
-                                    />
+                                    tabIndex={0}
+                                    role="button"
+                                    className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-12 rounded-full">
+                                        <img
+                                            alt="Tailwind CSS Navbar component"
+                                            src={photoURL || userDefaultPic}
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                            </div>
-                            <button onClick={handleSignOut} className="btn btn-sm md:btn-md  btn-neutral ml-2">
+                            <button
+                                onClick={handleSignOut}
+                                className="btn btn-sm md:btn-md  btn-neutral  bg-[#23BE0A] border-none ml-2">
                                 Sign Out
                             </button>
                         </div>
                     ) : (
                         <>
-                            <Link to={"/login"}>
-                                <button className="btn btn-xs md:btn-md btn-outline btn-primary mr-0.5 md:mr-4">
-                                    Login
-                                </button>
-                            </Link>
-                            <Link to={"/register"}>
-                                <button className="btn btn-xs md:btn-md btn-outline btn-primary">
-                                    Register
-                                </button>
-                            </Link>
+                            <NavLink
+                                className={({ isActive }) =>
+                                    !isActive
+                                        ? "btn  mr-0.5 md:mr-4 text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
+                                        : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none  btn-ghost mr-0.5 md:mr-4"
+                                }
+                                to={"/login"}>
+                                <button>Login</button>
+                            </NavLink>
+                            <NavLink
+                                className={({ isActive }) =>
+                                    !isActive
+                                        ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
+                                        : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost"
+                                }
+                                to={"/register"}>
+                                <button>Register</button>
+                            </NavLink>
                         </>
                     )}
                 </div>
             </div>
-            <ToastContainer />
         </div>
     );
 };
-
 export default Navbar;

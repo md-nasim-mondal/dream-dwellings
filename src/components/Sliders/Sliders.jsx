@@ -27,6 +27,7 @@ const Sliders = () => {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
+                loop={true}
                 className="mySwiper">
                 <SwiperSlide>
                     <div

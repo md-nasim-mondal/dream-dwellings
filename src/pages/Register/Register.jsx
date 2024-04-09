@@ -126,7 +126,7 @@ const Register = () => {
                         </label>
                     </div>
                     <div className="form-control my-2">
-                        <button className="btn btn-primary">Register</button>
+                        <button className="btn btn-ghost  btn-outline bg-[#23BE0A] border-none">Register</button>
                     </div>
                     <p className="text-center mt-4">
                         Already have an account?
