@@ -8,7 +8,8 @@ const Login = () => {
     const [loginError, setLoginError] = useState(null);
     const [showPassword, setShowPassword] = useState(false);
 
-    const { signIn,googleLogin, setUser } = useContext(AuthContext);
+    const { signIn, googleLogin, setUser, githubLogin } =
+        useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const handleLogin = (e) => {
@@ -50,7 +51,6 @@ const Login = () => {
         e.preventDefault();
         googleLogin()
             .then((result) => {
-                console.log(result);
                 setUser(result.user);
                 // navigate(location.state)
                 navigate(location?.state ? location.state : "/");
@@ -61,7 +61,32 @@ const Login = () => {
                     position: "top-right",
                     timer: 1500,
                 });
-
+            })
+            .catch((error) => {
+                Swal.fire({
+                    text: "Please Check Your Email and Password than Try Again!!",
+                    icon: "error",
+                    showConfirmButton: false,
+                    position: "top-right",
+                    timer: 1500,
+                });
+                setLoginError(error.message);
+            });
+    };
+    const handleGithubLogin = (e) => {
+        e.preventDefault();
+        githubLogin()
+            .then((result) => {
+                setUser(result.user);
+                // navigate(location.state)
+                navigate(location?.state ? location.state : "/");
+                Swal.fire({
+                    text: "LogIn Successfully With Google!!",
+                    icon: "success",
+                    showConfirmButton: false,
+                    position: "top-right",
+                    timer: 1500,
+                });
             })
             .catch((error) => {
                 Swal.fire({
@@ -77,12 +102,12 @@ const Login = () => {
     return (
         <div>
             <div>
-                <h2 className="text-3xl my-10 text-center">
-                    Login your account
-                </h2>
                 <form
                     onSubmit={handleLogin}
-                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl">
+                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl my-12">
+                    <h2 className="text-3xl my-10 text-center">
+                        Login your account
+                    </h2>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email address</span>
@@ -137,8 +162,18 @@ const Login = () => {
                             Register
                         </Link>{" "}
                     </p>
-                    <div>
-                        <button onClick={handleGoogleLogin} className="btn btn-accent">Login With Google</button>
+                    <h2 className="text-3xl font-bold text-center">Or</h2>
+                    <div className="flex gap-4 justify-center">
+                        <button
+                            onClick={handleGoogleLogin}
+                            className="btn btn-outline btn-ghost">
+                            Login With Google
+                        </button>
+                        <button
+                            onClick={handleGithubLogin}
+                            className="btn btn-outline btn-ghost">
+                            Login With Github
+                        </button>
                     </div>
                 </form>
             </div>

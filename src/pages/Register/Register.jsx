@@ -56,12 +56,12 @@ const Register = () => {
     return (
         <div className="p-4 md:p-0">
             <div>
-                <h2 className="text-3xl my-10 text-center">
-                    Register your account
-                </h2>
                 <form
                     onSubmit={handleRegister}
-                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl">
+                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl my-12">
+                    <h2 className="text-3xl my-10 text-center">
+                    Register your account
+                </h2>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Your Name</span>
@@ -130,10 +130,14 @@ const Register = () => {
                     </div>
                     <p className="text-center mt-4">
                         Already have an account?
+                        <br /> Or <br />
+                         want to login with social account? 
+                         <br />
+                         Than Go to
                         <Link
-                            className=" text-blue-600 font-bold"
+                            className=" text-blue-600 font-bold ml-2"
                             to={"/login"}>
-                            Login
+                            Login Page
                         </Link>
                     </p>
                 </form>

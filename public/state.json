@@ -1,0 +1,150 @@
+[
+    {
+        "id": 1,
+        "img": "https://ibb.co/zGQSGtr",
+        "estate_title": "Cozy Single-Family Home in Suburbia",
+        "segment_name": "Single-family homes",
+        "description": "Nestled in a tranquil suburban neighborhood, this cozy single-family home offers the perfect retreat from the hustle and bustle of city life. With its charming exterior and well-manicured lawn, this residence exudes warmth and curb appeal. Step inside to discover a spacious interior adorned with modern finishes and thoughtful design touches. The open-concept living area is ideal for entertaining guests or simply relaxing with family. The kitchen features sleek appliances, ample counter space, and a convenient breakfast bar. Upstairs, the master suite boasts a luxurious en-suite bathroom and plenty of closet space. Two additional bedrooms provide flexibility for guests or a home office. Outside, the expansive backyard offers endless possibilities for outdoor enjoyment, from summer barbecues to leisurely afternoons in the sun. With its convenient location close to schools, parks, and shopping, this home is truly a gem in suburbia.",
+        "price": "$350,000",
+        "status": "sale",
+        "area": "2,500 sq ft",
+        "location": "Suburbia Estates, Springfield",
+        "facilities": [
+            "3 bedrooms",
+            "2 bathrooms",
+            "Spacious backyard",
+            "Garage"
+        ]
+    },
+    {
+        "id": 2,
+        "img": "https://ibb.co/7rV2spH",
+        "estate_title": "Luxurious Downtown Apartment",
+        "segment_name": "Apartments",
+        "description": "Experience the epitome of urban living in this luxurious downtown apartment. Located in the heart of the city, this modern residence offers unparalleled convenience and sophistication. Step inside to discover a sleek and stylish interior featuring high-end finishes and panoramic views of the skyline. The open-concept layout seamlessly connects the living, dining, and kitchen areas, creating an ideal space for both relaxing and entertaining. The gourmet kitchen is equipped with state-of-the-art appliances, custom cabinetry, and a spacious island perfect for culinary adventures. The master bedroom retreat boasts floor-to-ceiling windows, a spa-like en-suite bathroom, and a walk-in closet. Additional features include in-unit laundry, a private balcony, and access to building amenities such as a fitness center, rooftop terrace, and 24/7 concierge service. With its prime location near restaurants, shops, and cultural attractions, this downtown apartment offers the ultimate urban lifestyle.",
+        "price": "$2,500/month",
+        "status": "rent",
+        "area": "1,200 sq ft",
+        "location": "Metropolitan Towers, New York City",
+        "facilities": [
+            "Open-concept living space",
+            "Gym",
+            "Rooftop terrace",
+            "24/7 security"
+        ]
+    },
+    {
+        "id": 3,
+        "img": "https://ibb.co/VJ4M82P",
+        "estate_title": "Quaint Townhouse with Victorian Charm",
+        "segment_name": "Townhouses",
+        "description": "Step back in time and experience the charm of yesteryear in this quaint townhouse with Victorian flair. Located in the historic district, this meticulously restored residence offers a unique blend of old-world charm and modern amenities. From the moment you enter, you'll be captivated by the intricate details and period features that adorn every corner. The main level features a gracious living room with a decorative fireplace, a formal dining room with original wainscoting, and a gourmet kitchen with premium appliances and granite countertops. Upstairs, the master suite awaits with a cozy sitting area, a walk-in closet, and a luxurious en-suite bathroom complete with a clawfoot tub and separate shower. Two additional bedrooms provide space for guests or a home office. Outside, the landscaped courtyard offers a peaceful retreat from the city hustle, with a brick patio perfect for alfresco dining and entertaining. With its convenient location near shops, restaurants, and parks, this townhouse offers the perfect blend of historic charm and modern convenience.",
+        "price": "$450,000",
+        "status": "sale",
+        "area": "1,800 sq ft",
+        "location": "Heritage Square, Boston",
+        "facilities": [
+            "3 floors",
+            "Original hardwood floors",
+            "Private garden",
+            "Fireplace"
+        ]
+    },
+    {
+        "id": 4,
+        "img": "https://ibb.co/nLKZTc1",
+        "estate_title": "Modern Student Housing Near Campus",
+        "segment_name": "Student housing",
+        "description": "Experience modern student living at its finest in this stylish housing community located just steps from campus. Designed with students in mind, this contemporary residence offers a range of amenities and conveniences to support academic success and personal growth. Each fully furnished unit features a private bedroom with ample storage space, a study area with high-speed internet access, and a shared living room and kitchen perfect for socializing with roommates. Residents also have access to on-site amenities including a fitness center, computer lab, and communal lounge with gaming consoles and study pods. With 24/7 security and on-site maintenance staff, students can feel safe and supported throughout their college experience. Plus, with its convenient location within walking distance of campus, dining options, and recreational facilities, this student housing community offers the ultimate in convenience and comfort.",
+        "price": "$800/month per bed",
+        "status": "rent",
+        "area": "300 sq ft (per room)",
+        "location": "University Heights, Los Angeles",
+        "facilities": [
+            "Furnished rooms",
+            "Study areas",
+            "Fitness center",
+            "Laundry facilities"
+        ]
+    },
+    {
+        "id": 5,
+        "img": "https://ibb.co/vD4Ls3C",
+        "estate_title": "Senior Living Community with Resort Amenities",
+        "segment_name": "Senior living communities",
+        "description": "Discover a vibrant senior living community designed to enrich the lives of active retirees. Situated amidst lush gardens and rolling hills, this resort-style community offers a welcoming environment where residents can embrace retirement with ease and grace. Whether you're seeking social engagement, wellness opportunities, or simply relaxation, you'll find it all within reach at this premier senior living destination. Enjoy chef-prepared meals in the elegant dining room, take a dip in the sparkling pool, or join friends for a game of cards in the clubhouse. With a calendar full of activities and events, there's never a dull moment at this vibrant community. For those seeking tranquility, the beautifully landscaped grounds provide the perfect setting for leisurely strolls or quiet moments of reflection. Plus, with personalized care services available on-site, residents can rest easy knowing their needs are always taken care of. Come experience the best in senior living at this idyllic community where every day feels like a vacation.",
+        "price": "$3,000/month",
+        "status": "rent",
+        "area": "1,500 sq ft",
+        "location": "Golden Gardens, Miami",
+        "facilities": [
+            "Swimming pool",
+            "Fitness classes",
+            "On-site dining",
+            "Transportation services"
+        ]
+    },
+    {
+        "id": 6,
+        "img": "https://ibb.co/RTpMCrv",
+        "estate_title": "Spectacular Oceanfront Vacation Rental",
+        "segment_name": "Vacation rentals",
+        "description": "Escape to paradise in this spectacular oceanfront vacation rental nestled along the pristine shores of Malibu. Boasting breathtaking views of the Pacific Ocean and luxurious amenities, this seaside retreat offers the ultimate beach getaway for discerning travelers. Step inside to discover an elegantly appointed interior featuring designer furnishings, vaulted ceilings, and floor-to-ceiling windows that frame panoramic ocean views. The spacious living area is perfect for gathering with family and friends, while the gourmet kitchen is equipped with top-of-the-line appliances and granite countertops for preparing gourmet meals. Outside, the expansive deck offers ample space for sunbathing, alfresco dining, and enjoying the gentle ocean breeze. For the ultimate relaxation, soak in the private hot tub while watching the sunset over the horizon. With direct beach access just steps away, you can spend your days swimming, surfing, or simply lounging on the sand. Whether you're seeking adventure or relaxation, this oceanfront retreat offers the perfect backdrop for your dream vacation.",
+        "price": "$500/night",
+        "status": "rent",
+        "area": "2,000 sq ft",
+        "location": "Seaside Retreat, Malibu",
+        "facilities": [
+            "Direct beach access",
+            "Hot tub",
+            "Outdoor dining area",
+            "Entertainment room"
+        ]
+    },
+    {
+        "id": 7,
+        "img": "https://ibb.co/LQDH8Zp",
+        "estate_title": "Cosy Cottage in the Countryside",
+        "segment_name": "Single-family homes",
+        "description": "Escape the hustle and bustle of city life and retreat to this charming countryside cottage nestled amidst rolling hills and picturesque landscapes. With its cozy ambiance and rustic charm, this home offers a peaceful respite from the stresses of modern living. Step inside to discover a warm and inviting interior featuring exposed wooden beams, stone accents, and a wood-burning fireplace that creates a cozy atmosphere on chilly evenings. The open-concept living area is perfect for gathering with family and friends, while the well-appointed kitchen boasts modern appliances and ample counter space for preparing home-cooked meals. Upstairs, the spacious master bedroom offers a tranquil retreat with vaulted ceilings and scenic views of the surrounding countryside. Outside, the expansive garden provides plenty of space for outdoor activities, from gardening to hosting summer barbecues. With its idyllic location and charming character, this countryside cottage offers the perfect escape for those seeking peace, privacy, and natural beauty.",
+        "price": "$250,000",
+        "status": "sale",
+        "area": "1,200 sq ft",
+        "location": "Rural Meadows, Devon",
+        "facilities": ["2 bedrooms", "1 bathroom", "Garden", "Fireplace"]
+    },
+    {
+        "id": 8,
+        "img": "https://ibb.co/y5NPdZX",
+        "estate_title": "Urban Loft with Industrial Chic Design",
+        "segment_name": "Apartments",
+        "description": "Experience loft living at its finest in this urban oasis located in the heart of the city's vibrant Warehouse District. Boasting industrial-chic design elements and modern amenities, this loft offers a stylish retreat for discerning urbanites. Step inside to discover an open and airy living space with soaring ceilings, exposed brick walls, and polished concrete floors that exude contemporary elegance. The expansive windows flood the interior with natural light, while offering panoramic views of the city skyline. The sleek kitchen features stainless steel appliances, quartz countertops, and a spacious island perfect for culinary enthusiasts. The lofted bedroom provides a cozy retreat with a luxurious en-suite bathroom and ample closet space. Additional highlights include in-unit laundry, a private balcony, and access to building amenities such as a fitness center, rooftop terrace, and resident lounge. With its prime location close to shops, restaurants, and cultural attractions, this urban loft offers the ultimate in city living.",
+        "price": "$3,000/month",
+        "status": "rent",
+        "area": "1,800 sq ft",
+        "location": "Warehouse District, Chicago",
+        "facilities": [
+            "Exposed brick walls",
+            "High ceilings",
+            "Loft bedroom",
+            "Fitness center"
+        ]
+    },
+    {
+        "id": 9,
+        "img": "https://ibb.co/z6vmpNY",
+        "estate_title": "Luxury Retirement Community",
+        "segment_name": "Senior living communities",
+        "description": "Indulge in a life of luxury and leisure at this upscale retirement community designed for discerning seniors. Nestled amidst manicured gardens and scenic vistas, this resort-style community offers an unparalleled retirement experience where every day feels like a vacation. From the moment you arrive, you'll be greeted by impeccable service, elegant surroundings, and a vibrant community of like-minded individuals. Whether you're seeking relaxation, social engagement, or personal enrichment, you'll find it all within reach at this premier senior living destination. Enjoy gourmet dining experiences in the upscale restaurant, pamper yourself with a rejuvenating spa treatment, or stay active with a variety of fitness classes and outdoor activities. With personalized care services available on-site, you can rest easy knowing your needs are always taken care of by compassionate staff members. Come experience the epitome of retirement living at this luxurious community where every day brings new opportunities for enjoyment and fulfillment.",
+        "price": "$5,000/month",
+        "status": "rent",
+        "area": "2,500 sq ft",
+        "location": "Palm Vista Estates, Scottsdale",
+        "facilities": [
+            "Fine dining restaurant",
+            "Spa and salon",
+            "Concierge services",
+            "Golf course access"
+        ]
+    }
+]
