@@ -1,5 +1,5 @@
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -7,7 +7,7 @@ import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { createUser,setUser, logOut } = useContext(AuthContext);
+    const { createUser, setUser, logOut } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
 
     const handleRegister = (e) => {
@@ -17,34 +17,37 @@ const Register = () => {
         const photo = form.get("photo");
         const email = form.get("email");
         const password = form.get("password");
-        if(password.length < 6){
+        if (password.length < 6) {
             return toast.error("Password length should be minimum 6 digit");
         }
-        if(!/[a-z]/.test(password)){
-            return toast.error("Password must contain at least one lowercase letter");
+        if (!/[a-z]/.test(password)) {
+            return toast.error(
+                "Password must contain at least one lowercase letter"
+            );
         }
-        if(!/[A-Z]/.test(password)){
-            return toast.error("Password must contain at least one uppercase letter");
+        if (!/[A-Z]/.test(password)) {
+            return toast.error(
+                "Password must contain at least one uppercase letter"
+            );
         }
         // create user
         createUser(email, password)
             .then((result) => {
                 const presentUser = result.user;
                 updateProfile(presentUser, {
-                    displayName: `${name}`, photoURL: `${photo}`
+                    displayName: `${name}`,
+                    photoURL: `${photo}`,
                 })
                     .then(() => {
-                        toast.success('Successfully Registered !!')
+                        toast.success("Successfully Registered !!");
                     })
-                    .catch(error => {
+                    .catch((error) => {
                         toast.error(error.message);
-                    })
+                    });
                 logOut();
                 setUser(null);
             })
             .catch((error) => toast.error(error.message));
-
-
     };
     return (
         <div className="p-4 md:p-0">
