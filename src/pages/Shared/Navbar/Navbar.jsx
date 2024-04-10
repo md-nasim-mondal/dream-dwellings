@@ -127,12 +127,12 @@ const Navbar = () => {
                             </button>
                         </div>
                     ) : (
-                        <>
+                        <div className="flex flex-col md:flex-row gap-2">
                             <NavLink
                                 className={({ isActive }) =>
                                     !isActive
-                                        ? "btn  mr-0.5 md:mr-4 text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
-                                        : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none  btn-ghost mr-0.5 md:mr-4"
+                                        ? "btn btn-sm md:btn-md mr-0.5 md:mr-4 text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
+                                        : "btn btn-sm md:btn-md btn-outline bg-[#23BE0A] border-none  btn-ghost mr-0.5 md:mr-4"
                                 }
                                 to={"/login"}>
                                 <button>Login</button>
@@ -140,13 +140,13 @@ const Navbar = () => {
                             <NavLink
                                 className={({ isActive }) =>
                                     !isActive
-                                        ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
-                                        : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost"
+                                        ? "btn p btn-sm md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
+                                        : "btn btn-sm md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost"
                                 }
                                 to={"/register"}>
                                 <button>Register</button>
                             </NavLink>
-                        </>
+                        </div>
                     )}
                 </div>
             </div>

@@ -37,52 +37,6 @@ const UpdateProfile = () => {
     };
     return (
         <div>
-            {/* <form
-                onSubmit={handleUpdate}
-                className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl my-10">
-                <h2 className="text-3xl my-8 text-center">
-                    Update Your Profile
-                </h2>
-                <div>
-                    <h3 className="text-lg text-center">
-                        Pleaser First Clear Default Value from input field than
-                        Write Your New Info
-                    </h3>
-                </div>
-                <div className="form-control">
-                    <label htmlFor="userName" className="label">
-                        <span className="label-text">Your Name</span>
-                    </label>
-                    <input
-                        type="text"
-                        name="userName"
-                        id="userName"
-                        placeholder="Enter your new name"
-                        className="input input-bordered"
-                        value={user.displayName}
-                        required
-                    />
-                </div>
-                <div className="form-control relative">
-                    <label htmlFor="userPhoto" className="label">
-                        <span className="label-text">Your Photo URL</span>
-                    </label>
-                    <input
-                        type="url"
-                        name="userPhoto"
-                        id="userPhoto"
-                        placeholder="Enter your new photo URL"
-                        className="input input-bordered"
-                        value={user.photoURL}
-                        required
-                    />
-                </div>
-                <div className="form-control mt-6">
-                    <button type="submit" className="btn btn-primary">
-                        Update
-                    </button>
-                </div>
-            </form> */}
             <form
                 onSubmit={handleUpdate}
                 className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-gradient-to-b from-purple-400 to-purple-600 p-6 rounded-xl my-10">

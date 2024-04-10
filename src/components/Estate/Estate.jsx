@@ -12,10 +12,9 @@ const Estate = ({ estate }) => {
         status,
         facilities,
     } = estate;
-    console.log(img);
     return (
         <div>
-            <div className="card  h-[780px] border border-gray-300 rounded-lg p-8 bg-white shadow-lg">
+            <div className="card  h-[780px] border border-gray-300 rounded-lg p-8 bg-white shadow-lg w-[94%] md:w-full mx-auto">
                 <figure className="relative h-[250px] mb-8 rounded-xl overflow-hidden">
                     <img
                         src={`${img}`}
@@ -26,15 +25,15 @@ const Estate = ({ estate }) => {
                         {status}
                     </div>
                 </figure>
-                <h2 className="card-title text-[#FF5733] text-3xl text-center font-bold mb-4">
+                <h2 className="card-title text-[#FF5733] md:text-3xl text-center font-bold mb-4">
                     {estate_title}
                 </h2>
                 <div className="card-body p-0">
-                    <div className="flex justify-between">
+                    <div className="flex justify-between flex-wrap">
                         <p className=" text-[#4CAF50] text-lg font-bold mb-2">
                             <i>#{segment_name}</i>
                         </p>
-                        <p className="text-lg font-semibold mb-4 text-end">
+                        <p className="text-lg font-semibold mb-4 xl:text-end">
                             Area: {area}
                         </p>
                     </div>
@@ -57,7 +56,7 @@ const Estate = ({ estate }) => {
                         </div>
                     </div>
 
-                    <Link to={`/details/${id}`}>
+                    <Link to={`/estate/${id}`}>
                         <button className="btn bg-[#4CAF50] border-0 btn-primary text-white font-bold text-lg py-3 px-6 rounded-lg hover:bg-[#45A049] transition duration-300">
                             View Property
                         </button>

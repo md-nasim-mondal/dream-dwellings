@@ -38,7 +38,7 @@ const Sliders = () => {
                         <div className="hero-overlay rounded-xl md:rounded-3xl"></div>
                         <div className="hero-content text-center text-neutral-content ">
                             <div>
-                                <h1 className="mb-5 text-5xl font-bold">
+                                <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
                                 Welcome to DreamDwellings: Where Your Home Dreams Come True!
                                 </h1>
                                 <p className="mb-5">
@@ -60,7 +60,7 @@ const Sliders = () => {
                         <div className="hero-overlay rounded-xl md:rounded-3xl"></div>
                         <div className="hero-content text-center text-neutral-content ">
                             <div>
-                                <h1 className="mb-5 text-5xl font-bold">
+                                <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
                                 Discover Your Perfect Haven: Explore DreamDwellings Today!
                                 </h1>
                                 <p className="mb-5">
@@ -82,7 +82,7 @@ const Sliders = () => {
                         <div className="hero-overlay rounded-xl md:rounded-3xl"></div>
                         <div className="hero-content text-center text-neutral-content ">
                             <div>
-                                <h1 className="mb-5 text-5xl font-bold">
+                                <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
                                 Unlock the Door to Your Dream Home: DreamDwellings Welcomes You!
                                 </h1>
                                 <p className="mb-5">
@@ -104,7 +104,7 @@ const Sliders = () => {
                         <div className="hero-overlay rounded-xl md:rounded-3xl"></div>
                         <div className="hero-content text-center text-neutral-content ">
                             <div>
-                                <h1 className="mb-5 text-5xl font-bold">
+                                <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
                                 Step into Serenity: DreamDwellings - Your Gateway to Home Bliss!
                                 </h1>
                                 <p className="mb-5">
@@ -126,7 +126,7 @@ const Sliders = () => {
                         <div className="hero-overlay rounded-xl md:rounded-3xl"></div>
                         <div className="hero-content text-center text-neutral-content ">
                             <div>
-                                <h1 className="mb-5 text-5xl font-bold">
+                                <h1 className="mb-5 text-2xl md:text-4xl lg:text-5xl font-bold">
                                 Embrace Luxury Living: DreamDwellings Presents Your Dream Abode!
                                 </h1>
                                 <p className="mb-5">
