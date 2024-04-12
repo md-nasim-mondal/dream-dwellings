@@ -16,13 +16,16 @@ const UpdateProfile = () => {
         e.preventDefault();
         const name = e.target.userName.value;
         const photo = e.target.userPhoto.value;
-
+        const email = user.email;
+        const uid = user.uid;
+        const emailVerified = user?.emailVerified;
         updateProfile(auth.currentUser, {
             displayName: `${name}`,
             photoURL: `${photo}`,
         })
             .then(() => {
-                setUser({displayName: `${name}`, photoURL: `${photo}` })
+                setUser({displayName: `${name}`, photoURL: `${photo}`, uid: `${uid}`, email: `${email}`, emailVerified: `${emailVerified}`            })
+
                 Swal.fire({
                     text: "Profile Successfully Updated Now See Your Profile",
                     icon: "success",
