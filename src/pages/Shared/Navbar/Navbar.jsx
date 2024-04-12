@@ -6,9 +6,17 @@ import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, loading } = useContext(AuthContext);
     const photoURL = user?.photoURL;
     const displayName = user?.displayName;
+
+    if (loading) {
+        return (
+            <div className=" flex mt-16 justify-center">
+                <span className="loading loading-infinity loading-lg"></span>
+            </div>
+        );
+    }
 
     const handleSignOut = () => {
         logOut()
@@ -114,7 +122,7 @@ const Navbar = () => {
                                     className="btn btn-ghost btn-circle avatar">
                                     <div className="w-12 rounded-full">
                                         <img
-                                            alt="Tailwind CSS Navbar component"
+                                            alt="Photo Coming Soon.."
                                             src={photoURL || userDefaultPic}
                                         />
                                     </div>

@@ -27,7 +27,7 @@ const EstateDetails = () => {
                     <title>Estate Details : {id}</title>
                 </Helmet> */}
                 <h2 className="lg:text-4xl">
-                    Section:{" "}
+                    Segment:{" "}
                     <span className="text-[#23BE0A]">#{segment_name}</span>
                 </h2>
                 <img

@@ -8,7 +8,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 const auth = getAuth();
 
 const UpdateProfile = () => {
-    const { user } = useContext(AuthContext);
+    const { user, setUser } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -22,6 +22,7 @@ const UpdateProfile = () => {
             photoURL: `${photo}`,
         })
             .then(() => {
+                setUser({displayName: `${name}`, photoURL: `${photo}` })
                 Swal.fire({
                     text: "Profile Successfully Updated Now See Your Profile",
                     icon: "success",
@@ -43,11 +44,8 @@ const UpdateProfile = () => {
                 <h2 className="text-4xl my-8 text-center text-white font-bold">
                     Update Your Profile
                 </h2>
-                <div className="text-center text-white mb-6">
-                    <p className="text-lg">
-                        Please clear default values from input fields before
-                        entering your new information.
-                    </p>
+                <div>
+                    <p className="text-lg text-center">Please First Clear Your Old Information than Write New Information</p>
                 </div>
                 <div className="form-control mb-4">
                     <label htmlFor="userName" className="label">
@@ -59,7 +57,8 @@ const UpdateProfile = () => {
                         id="userName"
                         placeholder="Enter your new name"
                         className="input input-bordered"
-                        value={user.displayName}
+                        defaultValue={user.displayName}
+                        contentEditable = 'true'
                         required
                     />
                 </div>
@@ -75,13 +74,13 @@ const UpdateProfile = () => {
                         id="userPhoto"
                         placeholder="Enter your new photo URL"
                         className="input input-bordered"
-                        value={user.photoURL}
+                        defaultValue={user.photoURL}
                         required
                     />
                 </div>
                 <div className="form-control">
                     <button type="submit" className="btn btn-primary w-full">
-                        Update
+                        Update Profile
                     </button>
                 </div>
             </form>

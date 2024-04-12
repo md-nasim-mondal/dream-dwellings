@@ -41,6 +41,7 @@ const Register = () => {
         createUser(email, password)
             .then((result) => {
                 const presentUser = result.user;
+                setUser(presentUser);
                 updateProfile(presentUser, {
                     displayName: `${name}`,
                     photoURL: `${photo}`,
