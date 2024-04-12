@@ -8,46 +8,70 @@ import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
 import EstateDetails from "../components/EstateDetails/EstateDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Contact from "../pages/Contact/Contact";
+import CustomerReviews from "../pages/CustomerReviews/CustomerReviews";
 
 const router = createBrowserRouter([
     {
-        path: '/',
+        path: "/",
         element: <Root></Root>,
         errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
-                path: '/',
-                element: <Home></Home>
+                path: "/",
+                element: <Home></Home>,
             },
             {
-                path: '/register',
-                element: <Register></Register>
+                path: "/register",
+                element: <Register></Register>,
             },
             {
-                path: '/login',
-                element: <Login></Login>
+                path: "/login",
+                element: <Login></Login>,
             },
             {
-                path: '/profile',
-                element: <PrivateRoute>
-                    <Profile></Profile>
-                </PrivateRoute>
+                path: "/profile",
+                element: (
+                    <PrivateRoute>
+                        <Profile></Profile>
+                    </PrivateRoute>
+                ),
             },
             {
-                path: '/updateProfile',
-                element: <PrivateRoute>
-                    <UpdateProfile></UpdateProfile>
-                </PrivateRoute>
+                path: "/updateProfile",
+                element: (
+                    <PrivateRoute>
+                        <UpdateProfile></UpdateProfile>
+                    </PrivateRoute>
+                ),
             },
             {
-                path: '/estate/:estateId',
-                element: <PrivateRoute>
-                    <EstateDetails></EstateDetails>,
-                </PrivateRoute>,
-                loader: () => fetch('/estates.json')
-            }
-        ]
-    }
+                path: "/estate/:estateId",
+                element: (
+                    <PrivateRoute>
+                        <EstateDetails></EstateDetails>,
+                    </PrivateRoute>
+                ),
+                loader: () => fetch("/estates.json"),
+            },
+            {
+                path: "/contact",
+                element: (
+                    <PrivateRoute>
+                        <Contact></Contact>
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "/reviews",
+                element: (
+                    <PrivateRoute>
+                        <CustomerReviews></CustomerReviews>,
+                    </PrivateRoute>
+                ),
+            },
+        ],
+    },
 ]);
 
 export default router;

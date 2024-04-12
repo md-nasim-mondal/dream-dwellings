@@ -4,7 +4,14 @@ import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Profile = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
+    if (loading) {
+        return (
+            <div className=" flex mt-16 justify-center">
+                <span className="loading loading-infinity loading-lg"></span>
+            </div>
+        );
+    }
     if (user !== null) {
         const displayName = user?.displayName;
         const email = user?.email;

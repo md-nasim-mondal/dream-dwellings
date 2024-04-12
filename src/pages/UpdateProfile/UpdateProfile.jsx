@@ -8,9 +8,16 @@ import { AuthContext } from "../../providers/AuthProvider";
 const auth = getAuth();
 
 const UpdateProfile = () => {
-    const { user, setUser } = useContext(AuthContext);
+    const { user, setUser, loading } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    if (loading) {
+        return (
+            <div className=" flex mt-16 justify-center">
+                <span className="loading loading-infinity loading-lg"></span>
+            </div>
+        );
+    }
 
     const handleUpdate = (e) => {
         e.preventDefault();

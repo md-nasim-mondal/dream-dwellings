@@ -8,10 +8,18 @@ import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { createUser, setUser, logOut } = useContext(AuthContext);
+    const { createUser, setUser, logOut, loading } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
+
+    if (loading) {
+        return (
+            <div className=" flex mt-16 justify-center">
+                <span className="loading loading-infinity loading-lg"></span>
+            </div>
+        );
+    }
 
     const handleRegister = (e) => {
         e.preventDefault();

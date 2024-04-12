@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import userDefaultPic from "../../../assets/user.png";
 import { IoClose, IoMenu } from "react-icons/io5";
-import { NavLink,  useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -44,50 +44,72 @@ const Navbar = () => {
 
     const navLinks = (
         <>
-            <li>
+            <p>
                 <NavLink
                     className={({ isActive }) =>
                         !isActive
-                            ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mr-0.5 md:mr-2"
-                            : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost mr-0.5 md:mr-2"
+                            ? "btn lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
+                            : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
                     }
                     to="/">
                     Home
                 </NavLink>
-            </li>
+            </p>
             {user && (
                 <>
-                    <li>
+                    <p>
                         <NavLink
                             className={({ isActive }) =>
                                 !isActive
-                                    ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mr-0.5 md:mr-2"
-                                    : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost mr-0.5 md:mr-2"
+                                    ? "btn lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
+                                    : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
                             }
                             to="/updateProfile">
                             Update Profile
                         </NavLink>
-                    </li>
-                    <li>
+                    </p>
+                    <p>
                         <NavLink
                             className={({ isActive }) =>
                                 !isActive
-                                    ? "btn btn-xs md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mr-0.5 md:mr-2"
-                                    : "btn btn-xs md:btn-md btn-outline bg-[#23BE0A] border-none btn-ghost  mr-0.5 md:mr-2"
+                                    ? "btn lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
+                                    : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
                             }
                             to="/profile">
                             UserProfile
                         </NavLink>
-                    </li>
+                    </p>
                 </>
             )}
+            <p>
+                <NavLink
+                    className={({ isActive }) =>
+                        !isActive
+                            ? "btn lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
+                            : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                    }
+                    to="/reviews">
+                    Customer Reviews
+                </NavLink>
+            </p>
+            <p>
+                <NavLink
+                    className={({ isActive }) =>
+                        !isActive
+                            ? "btn lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
+                            : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                    }
+                    to="/contact">
+                    Contact Us
+                </NavLink>
+            </p>
         </>
     );
     return (
         <div>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown relative">
                         <div
                             tabIndex={0}
                             onClick={() => setOpen(!open)}
@@ -99,15 +121,23 @@ const Navbar = () => {
                                 <IoMenu className="text-2xl" />
                             )}
                         </div>
-                        <ul
-                            tabIndex={0}
-                            className={`menu menu-sm dropdown-content
-                                ${open ? "" : "hidden"}
-                                mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52`}>
-                            {navLinks}
-                        </ul>
+                        <div className="menu menu-sm dropdown-content absolute z-10 lg:hidden mt-3 md:mt-5 ">
+                            <div
+                                className={`list-none p-4 shadow bg-gray-200
+                        ${
+                            open ? "" : "hidden"
+                        } rounded-box w-auto flex flex-col`}>
+                                {navLinks}
+                            </div>
+                        </div>
                     </div>
-                    <a className="btn-ghost md:text-3xl">DreamDwellings</a>
+                    <NavLink className="btn-ghost md:text-3xl">
+                        <img
+                            className="w-20 md:w-24 lg:w-40"
+                            src="/public/logo3.svg"
+                            alt=""
+                        />
+                    </NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">{navLinks}</ul>
