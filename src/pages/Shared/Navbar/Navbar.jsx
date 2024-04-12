@@ -2,13 +2,14 @@ import Swal from "sweetalert2";
 import { useContext, useState } from "react";
 import userDefaultPic from "../../../assets/user.png";
 import { IoClose, IoMenu } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
+import { NavLink,  useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const { user, logOut, loading } = useContext(AuthContext);
     const photoURL = user?.photoURL;
     const displayName = user?.displayName;
+    const navigate = useNavigate();
 
     if (loading) {
         return (
@@ -28,6 +29,7 @@ const Navbar = () => {
                     position: "top-right",
                     timer: 1500,
                 });
+                navigate("/");
             })
             .catch((error) => {
                 Swal.fire({
@@ -130,8 +132,8 @@ const Navbar = () => {
                             </div>
                             <button
                                 onClick={handleSignOut}
-                                className="btn btn-sm md:btn-md  btn-neutral  bg-[#23BE0A] border-none ml-2">
-                                Sign Out
+                                className="btn btn-sm md:btn-md ml-0.5 md:ml-4 text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]">
+                                LogOut
                             </button>
                         </div>
                     ) : (

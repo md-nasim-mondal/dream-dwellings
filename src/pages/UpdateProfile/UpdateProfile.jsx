@@ -24,7 +24,13 @@ const UpdateProfile = () => {
             photoURL: `${photo}`,
         })
             .then(() => {
-                setUser({displayName: `${name}`, photoURL: `${photo}`, uid: `${uid}`, email: `${email}`, emailVerified: `${emailVerified}`            })
+                setUser({
+                    displayName: `${name}`,
+                    photoURL: `${photo}`,
+                    uid: `${uid}`,
+                    email: `${email}`,
+                    emailVerified: `${emailVerified}`,
+                });
 
                 Swal.fire({
                     text: "Profile Successfully Updated Now See Your Profile",
@@ -48,7 +54,10 @@ const UpdateProfile = () => {
                     Update Your Profile
                 </h2>
                 <div>
-                    <p className="text-lg text-center">Please First Clear Your Old Information than Write New Information</p>
+                    <p className="text-lg text-center">
+                        Please First Clear Your Old Information than Write New
+                        Information
+                    </p>
                 </div>
                 <div className="form-control mb-4">
                     <label htmlFor="userName" className="label">
@@ -61,7 +70,7 @@ const UpdateProfile = () => {
                         placeholder="Enter your new name"
                         className="input input-bordered"
                         defaultValue={user.displayName}
-                        contentEditable = 'true'
+                        contentEditable="true"
                         required
                     />
                 </div>
