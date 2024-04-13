@@ -2,7 +2,11 @@ import Swal from "sweetalert2";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
+import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Login = () => {
     const [loginError, setLoginError] = useState(null);
@@ -100,12 +104,15 @@ const Login = () => {
             });
     };
     return (
-        <div>
+        <div
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1600">
             <div>
                 <form
                     onSubmit={handleLogin}
-                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl my-12">
-                    <h2 className="text-3xl my-10 text-center">
+                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl my-12 animate_animated animate_zoomInUp">
+                    <h2 className="text-3xl my-10 text-center animate_animated animate_bounceInDown">
                         Login your account
                     </h2>
                     <div className="form-control">
@@ -154,24 +161,26 @@ const Login = () => {
                             Login
                         </button>
                     </div>
-                    <p className="text-center mt-4">
+                    <p className="text-center mt-4 animate_animated animate_fadeInBottomLeft">
                         Don&apos;t have an account?{" "}
                         <Link
-                            className=" text-blue-600 font-bold"
+                            className=" text-blue-600 font-bold underline pl-1"
                             to={"/register"}>
                             Register
                         </Link>{" "}
                     </p>
                     <h2 className="text-3xl font-bold text-center">Or</h2>
-                    <div className="flex gap-4 justify-center">
+                    <div className="flex gap-4 justify-center animate_animated  animate_fadeInBottomRight">
                         <button
                             onClick={handleGoogleLogin}
                             className="btn btn-outline btn-ghost">
+                            <FaGoogle className="text-2xl" />
                             Login With Google
                         </button>
                         <button
                             onClick={handleGithubLogin}
                             className="btn btn-outline btn-ghost">
+                            <FaGithub className="text-2xl" />
                             Login With Github
                         </button>
                     </div>

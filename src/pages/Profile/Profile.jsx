@@ -2,6 +2,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Profile = () => {
     const { user, loading } = useContext(AuthContext);
@@ -21,11 +25,19 @@ const Profile = () => {
 
         return (
             <div className="flex items-center justify-center md:min-h-[80vh]  bg-gray-100 shadow-lg my-12 border-4 border-gray-100 rounded-3xl">
-                <div className="card w-[550px] bg-gradient-to-r from-purple-500 to-indigo-600 shadow-lg my-12 mx-auto border-2 border-purple-700 rounded-xl">
+                <div 
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1600"  className="card w-[550px] bg-gradient-to-r from-purple-500 to-indigo-600 shadow-lg my-12 mx-auto border-2 border-purple-700 rounded-xl animate_animated animate_rotateRight ">
                     <div>
-                        <div className="text-xl justify-end flex items-center text-white gap-2 pr-2 pt-2">Edit Profile <Link to={'/updateProfile'}><FaRegEdit className="text-lime-600"/></Link></div>
+                        <div className="text-xl justify-end flex items-center text-white gap-2 pr-2 pt-2">
+                            Edit Profile{" "}
+                            <Link to={"/updateProfile"}>
+                                <FaRegEdit className="text-lime-600" />
+                            </Link>
+                        </div>
                     </div>
-                    <figure className="mt-6 flex justify-center">
+                    <figure className="mt-6 flex justify-center animate_animated animate_backInDown  ">
                         <img
                             src={photoURL}
                             alt="userImg"
@@ -33,18 +45,21 @@ const Profile = () => {
                         />
                     </figure>
                     <div className="card-body text-white  ml-20 md:ml-0">
-                        <h2 className="text-3xl text-center pt-5 text-white">
+                        <h2 className="text-3xl text-center pt-5 text-white animate_animated animate_backInRight">
                             User Information
                         </h2>
-                        <h2 className="card-title text-xl mt-6">
+                        <h2 className="card-title text-xl mt-6 animate_animated animate_backInLeft">
                             Name: {displayName}
                         </h2>
                         <p className="font-medium">Uid: {uid}</p>
-                        <p className="font-medium">Email Address: {email}</p>
-                        <p className="font-medium break-words">Photo URL: {photoURL}</p>
-                        <p></p>
-                        <div className="card-actions justify-end mt-4">
-                            <div className="badge bg-purple-500 border border-white rounded-md py-1 px-2">
+                        <p className="font-medium  animate_animated animate_fadeInTopRight ">
+                            Email Address: {email}
+                        </p>
+                        <p className="font-medium break-words">
+                            Photo URL: {photoURL}
+                        </p>
+                        <div className="card-actions justify-end mt-4  animate_animated animate_fadeInBottomLeft">
+                            <div className="badge bg-purple-500 border-2 border-black rounded-md py-3 px-4 text-lg font-semibold">
                                 {emailVerified ? (
                                     <p className="font-semibold">
                                         Verified User

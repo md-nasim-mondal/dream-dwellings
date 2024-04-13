@@ -3,6 +3,11 @@ import { FaFacebookMessenger, FaFacebookSquare, FaInstagramSquare, FaLinkedinIn,
 import { IoMdContact } from "react-icons/io";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../providers/AuthProvider";
+import 'animate.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const Contact = () => {
 
     const {loading} = useContext(AuthContext);

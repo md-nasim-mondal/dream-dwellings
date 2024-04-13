@@ -5,6 +5,13 @@ import "react-toastify/dist/ReactToastify.css";
 import { getAuth, updateProfile } from "firebase/auth";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import 'animate.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
+
+
 const auth = getAuth();
 
 const UpdateProfile = () => {
@@ -53,11 +60,15 @@ const UpdateProfile = () => {
             });
     };
     return (
-        <div>
-            <form
+        <div className=" animate_animated animate_zoomInDown">
+            <form 
+            data-aos="flip-right"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1600" 
                 onSubmit={handleUpdate}
-                className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-gradient-to-b from-purple-400 to-purple-600 p-6 rounded-xl my-10">
-                <h2 className="text-4xl my-8 text-center text-white font-bold">
+                className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-gradient-to-b from-purple-400 to-purple-600 p-6 rounded-xl my-10 animate_animated animate_rollIn ">
+                <h2  data-aos="zoom-out-right"
+     data-aos-duration="2000"  className="text-4xl my-8 text-center text-white font-bold">
                     Update Your Profile
                 </h2>
                 <div>

@@ -1,5 +1,10 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
 const Estate = ({ estate }) => {
     const {
         id,
@@ -14,18 +19,21 @@ const Estate = ({ estate }) => {
     } = estate;
     return (
         <div>
-            <div className="card  h-[780px] border border-gray-300 rounded-lg p-8 bg-white shadow-lg w-[94%] md:w-full mx-auto">
-                <figure className="relative h-[250px] mb-8 rounded-xl overflow-hidden">
+            <div className="card hover:scale-105 hover:delay-180 h-[780px] border border-gray-300 rounded-lg p-8 bg-white shadow-lg w-[94%] md:w-full mx-auto">
+                <figure data-aos="zoom-in-down" data-aos-duration="2200" className="relative h-[250px] mb-8 rounded-xl overflow-hidden">
                     <img
                         src={`${img}`}
                         alt="Property Image"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-xl"
                     />
                     <div className="absolute bg-[#FF5733] text-xl font-semibold p-2 rounded-lg top-2 left-2">
                         {status}
                     </div>
                 </figure>
-                <h2 className="card-title text-[#FF5733] md:text-3xl text-center font-bold mb-4">
+                <h2
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="top-center"
+                    className="card-title text-[#FF5733] md:text-3xl text-center font-bold mb-4">
                     {estate_title}
                 </h2>
                 <div className="card-body p-0">
@@ -56,7 +64,7 @@ const Estate = ({ estate }) => {
                         </div>
                     </div>
 
-                    <Link to={`/estate/${id}`}>
+                    <Link to={`/estate/${id}`} className="  animate_animated animatebounceInLeft animate_delay-1s">
                         <button className="btn bg-[#4CAF50] border-0 btn-primary text-white font-bold text-lg py-3 px-6 rounded-lg hover:bg-[#45A049] transition duration-300">
                             View Property
                         </button>

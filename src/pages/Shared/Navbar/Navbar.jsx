@@ -4,20 +4,18 @@ import userDefaultPic from "../../../assets/user.png";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const { user, logOut, loading } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const photoURL = user?.photoURL;
     const displayName = user?.displayName;
     const navigate = useNavigate();
 
-    if (loading) {
-        return (
-            <div className=" flex mt-16 justify-center">
-                <span className="loading loading-infinity loading-lg"></span>
-            </div>
-        );
-    }
+    
 
     const handleSignOut = () => {
         logOut()
@@ -106,7 +104,11 @@ const Navbar = () => {
         </>
     );
     return (
-        <div>
+        <div
+            data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="1000">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown relative">

@@ -6,6 +6,10 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Register = () => {
     const { createUser, setUser, logOut, loading } = useContext(AuthContext);
@@ -73,20 +77,21 @@ const Register = () => {
             .catch((error) => toast.error(error.message));
     };
     return (
-        <div className="p-4 md:p-0">
-            
+        <div
+            data-aos="flip-down"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000"
+            className="p-4 md:p-0">
             <div>
                 <form
                     onSubmit={handleRegister}
-                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-gradient-to-b from-green-400 to-green-600 p-6 rounded-xl my-12">
-                    <h2 className="text-4xl my-10 text-center text-white font-bold">
+                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-gradient-to-b from-green-400 to-green-600 p-6 rounded-xl my-12 animate_animated animate_fadeInBottomRight">
+                    <h2 className="text-4xl my-10 text-center text-white font-bold animate_animated animate_backInUp">
                         Register Your Account
                     </h2>
                     <div className="form-control mb-4">
-                        <label className="label">
-                            <span className="label-text">
-                                Your Name
-                            </span>
+                        <label className="label block font-semibold">
+                            <span className="label-text text-white">Your Name</span>
                         </label>
                         <input
                             type="text"
@@ -97,7 +102,7 @@ const Register = () => {
                         />
                     </div>
                     <div className="form-control mb-4">
-                        <label className="label">
+                        <label className="label block font-semibold">
                             <span className="label-text text-white">
                                 Email Address
                             </span>
@@ -111,7 +116,7 @@ const Register = () => {
                         />
                     </div>
                     <div className="form-control mb-4">
-                        <label className="label">
+                        <label className="label block font-semibold">
                             <span className="label-text text-white">
                                 Photo URL
                             </span>
@@ -125,7 +130,7 @@ const Register = () => {
                         />
                     </div>
                     <div className="form-control relative mb-4">
-                        <label className="label">
+                        <label className="label block font-semibold">
                             <span className="label-text text-white">
                                 Password
                             </span>
@@ -162,14 +167,14 @@ const Register = () => {
                         </label>
                     </div>
                     <div className="form-control my-4">
-                        <button className="btn btn-ghost btn-outline bg-white text-green-600 border-none">
+                        <button className="btn btn-ghost btn-outline text-white bg-blue-500 border-blue-500 ">
                             Register
                         </button>
                     </div>
                     <p className="text-center text-white mt-4">
                         Already have an account?
                         <br /> Or <br />
-                        want to login with a social account?
+                        Want to login with a social account?
                         <br />
                         Then Go to
                         <Link

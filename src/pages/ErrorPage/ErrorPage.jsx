@@ -1,4 +1,8 @@
 import { Link, useRouteError } from "react-router-dom";
+import 'animate.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const ErrorPage = () => {
     const error = useRouteError();

@@ -1,4 +1,9 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import 'animate.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const EstateDetails = () => {
     const allEstates = useLoaderData();
     const { estateId } = useParams();
