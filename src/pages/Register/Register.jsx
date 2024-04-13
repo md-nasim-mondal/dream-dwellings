@@ -17,14 +17,6 @@ const Register = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    if (loading) {
-        return (
-            <div className=" flex mt-16 justify-center">
-                <span className="loading loading-infinity loading-lg"></span>
-            </div>
-        );
-    }
-
     const handleRegister = (e) => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
