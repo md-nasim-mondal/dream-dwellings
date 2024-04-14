@@ -52,7 +52,7 @@ const UpdateProfile = () => {
                     icon: "success",
                     showConfirmButton: false,
                     position: "top-right",
-                    timer: 1500,
+                    timer: 1000,
                 });
                 navigate(location?.state ? location.state : "/profile");
             })
@@ -68,13 +68,13 @@ const UpdateProfile = () => {
                 <title>DreamDwellings-User-Update-Profile</title>
                 <link rel="icon" type="image/svg+xml" href={Icon} />
             </Helmet>
-            <div className=" animate_animated animate_zoomInDown">
+            <div className=" animate__animated animate__delay-5s animate_zoomInDown">
                 <form
                     data-aos="flip-right"
                     data-aos-easing="ease-out-cubic"
                     data-aos-duration="1600"
                     onSubmit={handleUpdate}
-                    className=" animate_animated animate_rollIn card-body md:w-3/4 lg:w-1/2 mx-auto bg-gradient-to-b from-purple-400 to-purple-600 p-6 rounded-xl my-10">
+                    className=" animate__animated animate__delay-3s animate_rollIn card-body md:w-3/4 lg:w-1/2 mx-auto bg-gradient-to-b from-purple-400 to-purple-600 p-6 rounded-xl my-10">
                     <h2
                         data-aos="zoom-out-right"
                         data-aos-duration="2000"
@@ -98,8 +98,7 @@ const UpdateProfile = () => {
                             name="userName"
                             id="userName"
                             placeholder="Enter your new name"
-                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
-
+                            className="w-full px-4 py-3 rounded-md border focus:border-4 border-gray-700 bg-gray-900 text-gray-100 focus:border-green-600"
                             defaultValue={user.displayName}
                             contentEditable="true"
                             required
@@ -116,8 +115,7 @@ const UpdateProfile = () => {
                             name="userPhoto"
                             id="userPhoto"
                             placeholder="Enter your new photo URL"
-                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
-
+                            className="w-full px-4 py-3 rounded-md border focus:border-4 border-gray-700 bg-gray-900 text-gray-100 focus:border-green-600"
                             defaultValue={user.photoURL}
                             required
                         />

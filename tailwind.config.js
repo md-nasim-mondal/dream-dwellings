@@ -113,6 +113,7 @@ export default {
                 "slideOutLeft",
                 "slideOutRight",
                 "slideOutUp",
+                "animate__delay-5s"
             ],
         },
     },

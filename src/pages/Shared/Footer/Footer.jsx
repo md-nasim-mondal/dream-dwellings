@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="bg-base-200">
             <footer className="footer container mx-auto py-20 bg-base-200 text-base-content justify-center lg:justify-between">
                 <aside>
-                    <img className='w-20' src={logo} alt="" />
+                    <img className='w-20 md:w-32' src={logo} alt="" />
                     <p>
                         DreamDwelling Company Ltd.
                         <br />

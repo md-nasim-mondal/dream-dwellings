@@ -111,7 +111,7 @@ const Navbar = () => {
                             tabIndex={0}
                             role="button"
                             onClick={() => setOpen(!open)}
-                            className={`btn btn-ghost 
+                            className={`btn-ghost 
                             ${user ? "xl:hidden" : "lg:hidden"}
                             `}>
                             {open ? (
@@ -128,7 +128,7 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <NavLink className="btn-ghost md:text-2xl xl:text-3xl flex gap-2 text-black items-center font-bold flex-wrap">
+                    <NavLink className="animate__animated animate__backInRight btn-ghost md:text-2xl xl:text-3xl flex gap-2 text-black items-center font-bold flex-wrap">
                         <img
                             className="w-10 lg:w-12 xl:w-14"
                             src={Logo}
@@ -141,12 +141,12 @@ const Navbar = () => {
                     </NavLink>
                 </div>
                 <div
-                    className={`navbar-center hidden 
+                    className={`animate__animated animate__backInUp navbar-center hidden 
                 ${user ? "xl:flex" : "lg:flex"}
                 `}>
                     <ul className="menu menu-horizontal px-1">{navLinks}</ul>
                 </div>
-                <div className="navbar-end">
+                <div className="animate__animated animate__backInLeft navbar-end">
                     {user ? (
                         <div className="flex items-center">
                             <div

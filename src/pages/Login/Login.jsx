@@ -123,33 +123,35 @@ const Login = () => {
                 data-aos-duration="1600">
                 <form
                     onSubmit={handleLogin}
-                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content bg-opacity-30 p-2 md:p-6 lg:p-10  rounded-xl my-12 animate_animated animate_zoomInUp">
-                    <h2 className="text-3xl font-bold text-black my-10 text-center animate_animated animate_bounceInDown">
+                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content bg-opacity-30 p-2 md:p-6 lg:p-10  rounded-xl my-12 animate__animated animate_zoomInUp">
+                    <h2 className=" animate__animated hover:animate__backInDown  text-3xl font-bold text-black my-10 text-center">
                         Login your account
                     </h2>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-semibold text-lg text-black">Email address</span>
+                            <span className="label-text font-semibold text-lg text-black">
+                                Email address
+                            </span>
                         </label>
                         <input
                             type="email"
                             name="email"
                             placeholder="Enter your email address"
-                           className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
-
+                            className="w-full px-4 py-3 rounded-md border focus:border-4 border-gray-700 bg-gray-900 text-gray-100 focus:border-green-600"
                             required
                         />
                     </div>
                     <div className="form-control relative">
                         <label className="label">
-                            <span className="label-text font-semibold text-lg text-black">Password</span>
+                            <span className="label-text font-semibold text-lg text-black">
+                                Password
+                            </span>
                         </label>
                         <input
                             type={showPassword ? "text" : "password"}
                             name="password"
                             placeholder="Enter your password"
-                           className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
-
+                            className="w-full px-4 py-3 rounded-md border focus:border-4 border-gray-700 bg-gray-900 text-gray-100 focus:border-green-600"
                             required
                         />
                         <span
@@ -171,11 +173,11 @@ const Login = () => {
                     </div>
                     {loginError && <p className="text-red-500">{loginError}</p>}
                     <div className="form-control mt-6">
-                        <button className="btn btn-ghost text-lg font-semibold text-black btn-outline bg-[#23BE0A] border-none">
+                        <button className="btn btn-ghost w-full text-lg font-semibold text-black btn-outline bg-[#23BE0A] border-none hover:w-[50%] mx-auto">
                             Login
                         </button>
                     </div>
-                    <p className="text-center text-lg text-black font-medium mt-4 animate_animated animate_fadeInBottomLeft">
+                    <p className="text-center text-lg text-black font-medium mt-4 animate__animated animate_fadeInBottomLeft">
                         Don&apos;t have an account?{" "}
                         <Link
                             className=" text-blue-600 font-bold underline pl-1"
@@ -184,7 +186,7 @@ const Login = () => {
                         </Link>{" "}
                     </p>
                     <h2 className="text-3xl font-bold text-center">Or</h2>
-                    <div className="flex gap-4 justify-center animate_animated  animate_fadeInBottomRight">
+                    <div className="flex gap-4 justify-center animate__animated  animate_fadeInBottomRight">
                         <button
                             onClick={handleGoogleLogin}
                             className="btn btn-outline btn-ghost text-black text-lg font-semibold">

@@ -73,9 +73,9 @@ const Register = () => {
     };
     return (
         <div
-        data-aos="flip-down"
-        data-aos-easing="ease-in-cubic"
-        data-aos-duration="1500"
+            data-aos="flip-down"
+            data-aos-easing="ease-in-cubic"
+            data-aos-duration="1500"
             className="p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat md:h-screen bg-opacity-60 my-16"
             style={{ backgroundImage: `url(${Bg})` }}>
             <Helmet>
@@ -83,13 +83,13 @@ const Register = () => {
                 <link rel="icon" type="image/svg+xml" href={Icon} />
             </Helmet>
             <div
-            data-aos="flip-up"
-            data-aos-easing="ease-in-cubic"
-            data-aos-duration="2500">
+                data-aos="flip-up"
+                data-aos-easing="ease-in-cubic"
+                data-aos-duration="2500">
                 <form
                     onSubmit={handleRegister}
-                    className=" animate_animated animate_fadeInBottomRight card-body md:w-3/4 lg:w-1/2 mx-auto  p-6 rounded-xl my-12 bg-gray-100 bg-opacity-20">
-                    <h2 className=" animate_animated animate_backInUp text-4xl my-4 text-center text-white font-bold">
+                    className=" animate__animated animate_fadeInBottomRight animate__delay-5s card-body md:w-3/4 lg:w-1/2 mx-auto  p-6 rounded-xl my-12 bg-gray-100 bg-opacity-20">
+                    <h2 className=" animate__animated animate_backInUp text-4xl my-4 text-center text-white font-bold">
                         Register Your Account
                     </h2>
                     <div className="form-control">
@@ -102,8 +102,7 @@ const Register = () => {
                             type="text"
                             name="name"
                             placeholder="Enter your name"
-                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
-
+                            className="w-full px-4 py-3 rounded-md border focus:border-4 border-gray-700 bg-gray-900 text-gray-100 focus:border-green-600"
                             required
                         />
                     </div>
@@ -117,8 +116,7 @@ const Register = () => {
                             type="email"
                             name="email"
                             placeholder="Enter your email address"
-                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
-
+                            className="w-full px-4 py-3 rounded-md border focus:border-4 border-gray-700 bg-gray-900 text-gray-100 focus:border-green-600"
                             required
                         />
                     </div>
@@ -132,8 +130,7 @@ const Register = () => {
                             type="url"
                             name="photo"
                             placeholder="Enter your photo URL"
-                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
-
+                            className="w-full px-4 py-3 rounded-md border focus:border-4 border-gray-700 bg-gray-900 text-gray-100 focus:border-green-600"
                             required
                         />
                     </div>
@@ -147,8 +144,7 @@ const Register = () => {
                             type={showPassword ? "text" : "password"}
                             name="password"
                             placeholder="Enter your password"
-                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
-
+                            className="w-full px-4 py-3 rounded-md border focus:border-4 border-gray-700 bg-gray-900 text-gray-100 focus:border-green-600"
                             required
                         />
                         <span
@@ -168,7 +164,9 @@ const Register = () => {
                             id="terms"
                             className="mr-2 text-white"
                         />
-                        <label className="text-white text-base font-medium" htmlFor="terms">
+                        <label
+                            className="text-white text-base font-medium"
+                            htmlFor="terms">
                             Accept our{" "}
                             <a className="text-blue-500" href="#">
                                 terms and conditions

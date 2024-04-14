@@ -20,7 +20,10 @@ const Estate = ({ estate }) => {
     return (
         <div>
             <div className="card hover:scale-105 hover:delay-180 h-[780px] border border-gray-300 rounded-lg p-8 bg-white shadow-lg w-[94%] md:w-full mx-auto">
-                <figure data-aos="zoom-in-down" data-aos-duration="2200" className="relative h-[250px] mb-8 rounded-xl overflow-hidden">
+                <figure
+                    data-aos="zoom-in-down"
+                    data-aos-duration="2200"
+                    className="relative h-[250px] mb-8 rounded-xl overflow-hidden">
                     <img
                         src={`${img}`}
                         alt="Property Image"
@@ -38,7 +41,7 @@ const Estate = ({ estate }) => {
                 </h2>
                 <div className="card-body p-0">
                     <div className="flex justify-between flex-wrap">
-                        <p className=" text-[#4CAF50] text-lg font-bold mb-2">
+                        <p className="text-[#4CAF50] text-lg font-bold mb-2">
                             <i>#{segment_name}</i>
                         </p>
                         <p className="text-lg text-black font-semibold mb-4 xl:text-end">
@@ -64,7 +67,9 @@ const Estate = ({ estate }) => {
                         </div>
                     </div>
 
-                    <Link to={`/estate/${id}`} className="  animate_animated animatebounceInLeft animate_delay-1s">
+                    <Link
+                        to={`/estate/${id}`}
+                        className="  animate__animated animatebounceInLeft animate_delay-1s">
                         <button className="btn bg-[#4CAF50] border-0 btn-primary text-white font-bold text-lg py-3 px-6 rounded-lg hover:bg-[#45A049] transition duration-300">
                             View Property
                         </button>
