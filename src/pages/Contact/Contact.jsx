@@ -34,7 +34,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="mb-12">
+        <div className="mb-12 py-16 lg:py-32">
             <Helmet>
                 <title>DreamDwellings || Contact</title>
                 <link rel="icon" type="image/svg+xml" href={Icon} />

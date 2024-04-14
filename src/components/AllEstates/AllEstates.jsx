@@ -19,6 +19,7 @@ const AllEstates = () => {
                     {" "}
                     Estates{" "}
                 </h1>
+                <p className="text-lg text-center w-[94%] md:w-[90%] mx-auto text-black font-normal pb-12">Explore DreamDwellings&apos; Residential Estates, where luxury meets comfort. Discover exquisite homes tailored to your lifestyle, from quaint cottages to elegant mansions. Find your dream residence amidst our curated selection of premier properties.</p>
             </div>
             <div
                 data-aos="fade-up-right"
