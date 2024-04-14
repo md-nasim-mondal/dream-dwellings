@@ -45,8 +45,8 @@ const Navbar = () => {
                 <NavLink
                     className={({ isActive }) =>
                         !isActive
-                            ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
-                            : "btn  btn-outline lg:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                            ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
+                            : "btn  btn-outline xl:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2  md:mr-2"
                     }
                     to="/">
                     Home
@@ -58,8 +58,8 @@ const Navbar = () => {
                         <NavLink
                             className={({ isActive }) =>
                                 !isActive
-                                    ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
-                                    : "btn  btn-outline lg:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                                    ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
+                                    : "btn  btn-outline xl:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2  md:mr-2"
                             }
                             to="/updateProfile">
                             Update Profile
@@ -69,8 +69,8 @@ const Navbar = () => {
                         <NavLink
                             className={({ isActive }) =>
                                 !isActive
-                                    ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
-                                    : "btn  btn-outline lg:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                                    ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
+                                    : "btn  btn-outline xl:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2  md:mr-2"
                             }
                             to="/profile">
                             UserProfile
@@ -82,8 +82,8 @@ const Navbar = () => {
                 <NavLink
                     className={({ isActive }) =>
                         !isActive
-                            ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
-                            : "btn  btn-outline lg:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                            ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
+                            : "btn  btn-outline xl:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2  md:mr-2"
                     }
                     to="/reviews">
                     Customer Reviews
@@ -93,8 +93,8 @@ const Navbar = () => {
                 <NavLink
                     className={({ isActive }) =>
                         !isActive
-                            ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
-                            : "btn  btn-outline lg:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                            ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
+                            : "btn  btn-outline xl:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2  md:mr-2"
                     }
                     to="/contact">
                     Contact Us
@@ -111,7 +111,9 @@ const Navbar = () => {
                             tabIndex={0}
                             role="button"
                             onClick={() => setOpen(!open)}
-                            className="btn btn-ghost lg:hidden">
+                            className={`btn btn-ghost 
+                            ${user ? "xl:hidden" : "lg:hidden"}
+                            `}>
                             {open ? (
                                 <IoClose className="text-2xl" />
                             ) : (
@@ -138,7 +140,10 @@ const Navbar = () => {
                         </p>
                     </NavLink>
                 </div>
-                <div className="navbar-center hidden lg:flex flex-wrap">
+                <div
+                    className={`navbar-center hidden 
+                ${user ? "xl:flex" : "lg:flex"}
+                `}>
                     <ul className="menu menu-horizontal px-1">{navLinks}</ul>
                 </div>
                 <div className="navbar-end">
