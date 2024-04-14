@@ -15,7 +15,7 @@ const AllEstates = () => {
     return (
         <div className="my-20">
             <div data-aos="flip-right" data-aos-duration="1000">
-                <h1 className="text-2xl font-bold lg:text-5xl text-center my-12">
+                <h1 className="text-2xl text-black font-bold lg:text-5xl text-center my-12">
                     {" "}
                     Estates{" "}
                 </h1>

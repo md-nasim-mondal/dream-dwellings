@@ -76,7 +76,7 @@ const Register = () => {
         data-aos="flip-down"
         data-aos-easing="ease-in-cubic"
         data-aos-duration="1500"
-            className="p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat md:h-screen bg-opacity-60"
+            className="p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat md:h-screen bg-opacity-60 my-16"
             style={{ backgroundImage: `url(${Bg})` }}>
             <Helmet>
                 <title>DreamDwellings-User-Register</title>
@@ -94,7 +94,7 @@ const Register = () => {
                     </h2>
                     <div className="form-control">
                         <label className="label block font-semibold">
-                            <span className="label-text text-white">
+                            <span className="label-text font-semibold text-lg text-white">
                                 Your Name
                             </span>
                         </label>
@@ -102,13 +102,14 @@ const Register = () => {
                             type="text"
                             name="name"
                             placeholder="Enter your name"
-                            className="input input-bordered"
+                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+
                             required
                         />
                     </div>
                     <div className="form-control">
                         <label className="label block font-semibold">
-                            <span className="label-text text-white">
+                            <span className="label-text font-semibold text-lg text-white">
                                 Email Address
                             </span>
                         </label>
@@ -116,13 +117,14 @@ const Register = () => {
                             type="email"
                             name="email"
                             placeholder="Enter your email address"
-                            className="input input-bordered"
+                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+
                             required
                         />
                     </div>
                     <div className="form-control">
                         <label className="label block font-semibold">
-                            <span className="label-text text-white">
+                            <span className="label-text font-semibold text-lg text-white">
                                 Photo URL
                             </span>
                         </label>
@@ -130,13 +132,14 @@ const Register = () => {
                             type="url"
                             name="photo"
                             placeholder="Enter your photo URL"
-                            className="input input-bordered"
+                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+
                             required
                         />
                     </div>
                     <div className="form-control relative">
                         <label className="label block font-semibold">
-                            <span className="label-text text-white">
+                            <span className="label-text font-semibold text-lg text-white">
                                 Password
                             </span>
                         </label>
@@ -144,7 +147,8 @@ const Register = () => {
                             type={showPassword ? "text" : "password"}
                             name="password"
                             placeholder="Enter your password"
-                            className="input input-bordered"
+                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+
                             required
                         />
                         <span
@@ -164,7 +168,7 @@ const Register = () => {
                             id="terms"
                             className="mr-2 text-white"
                         />
-                        <label className="text-white" htmlFor="terms">
+                        <label className="text-white text-base font-medium" htmlFor="terms">
                             Accept our{" "}
                             <a className="text-blue-500" href="#">
                                 terms and conditions
@@ -172,7 +176,7 @@ const Register = () => {
                         </label>
                     </div>
                     <div className="form-control my-4">
-                        <button className="btn btn-ghost btn-outline text-white bg-green-500 border-none ">
+                        <button className="btn btn-ghost btn-outline text-lg font-semibold text-white bg-green-500 border-none ">
                             Register
                         </button>
                     </div>

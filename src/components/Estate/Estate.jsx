@@ -41,7 +41,7 @@ const Estate = ({ estate }) => {
                         <p className=" text-[#4CAF50] text-lg font-bold mb-2">
                             <i>#{segment_name}</i>
                         </p>
-                        <p className="text-lg font-semibold mb-4 xl:text-end">
+                        <p className="text-lg text-black font-semibold mb-4 xl:text-end">
                             Area: {area}
                         </p>
                     </div>

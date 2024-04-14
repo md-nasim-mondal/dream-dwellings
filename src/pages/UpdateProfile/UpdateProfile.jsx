@@ -82,7 +82,7 @@ const UpdateProfile = () => {
                         Update Your Profile
                     </h2>
                     <div>
-                        <p className="text-lg text-center">
+                        <p className="text-lg text-center text-black">
                             Please First Clear Your Old Information than Write
                             New Information
                         </p>
@@ -98,7 +98,8 @@ const UpdateProfile = () => {
                             name="userName"
                             id="userName"
                             placeholder="Enter your new name"
-                            className="input input-bordered"
+                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+
                             defaultValue={user.displayName}
                             contentEditable="true"
                             required
@@ -115,7 +116,8 @@ const UpdateProfile = () => {
                             name="userPhoto"
                             id="userPhoto"
                             placeholder="Enter your new photo URL"
-                            className="input input-bordered"
+                            className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+
                             defaultValue={user.photoURL}
                             required
                         />

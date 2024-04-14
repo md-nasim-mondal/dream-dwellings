@@ -4,6 +4,7 @@ import userDefaultPic from "../../../assets/user.png";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
+import Logo from "../../../assets/logo/logo22.png";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -44,8 +45,8 @@ const Navbar = () => {
                 <NavLink
                     className={({ isActive }) =>
                         !isActive
-                            ? "btn lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
-                            : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                            ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
+                            : "btn  btn-outline lg:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
                     }
                     to="/">
                     Home
@@ -57,8 +58,8 @@ const Navbar = () => {
                         <NavLink
                             className={({ isActive }) =>
                                 !isActive
-                                    ? "btn lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
-                                    : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                                    ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
+                                    : "btn  btn-outline lg:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
                             }
                             to="/updateProfile">
                             Update Profile
@@ -68,8 +69,8 @@ const Navbar = () => {
                         <NavLink
                             className={({ isActive }) =>
                                 !isActive
-                                    ? "btn lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
-                                    : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                                    ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
+                                    : "btn  btn-outline lg:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
                             }
                             to="/profile">
                             UserProfile
@@ -81,8 +82,8 @@ const Navbar = () => {
                 <NavLink
                     className={({ isActive }) =>
                         !isActive
-                            ? "btn lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
-                            : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                            ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
+                            : "btn  btn-outline lg:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
                     }
                     to="/reviews">
                     Customer Reviews
@@ -93,7 +94,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                         !isActive
                             ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
-                            : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
+                            : "btn  btn-outline lg:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
                     }
                     to="/contact">
                     Contact Us
@@ -103,7 +104,7 @@ const Navbar = () => {
     );
     return (
         <div>
-            <div className="navbar bg-gray-300 rounded-3xl md:p-4 ">
+            <div className="navbar bg-gray-300 rounded-3xl md:p-4 bg-opacity-40 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div
@@ -125,15 +126,19 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <NavLink className="btn-ghost md:text-3xl">
+                    <NavLink className="btn-ghost md:text-2xl xl:text-3xl flex gap-2 text-black items-center font-bold flex-wrap">
                         <img
-                            className="w-20 md:w-24 lg:w-40 text-blue-600"
-                            src="/public/logo3.svg"
-                            alt=""
+                            className="w-10 lg:w-12 xl:w-14"
+                            src={Logo}
+                            alt="Logo Coming Soon"
                         />
+                        <p>
+                            Dream
+                            <span className="text-green-600">Dwellings</span>
+                        </p>
                     </NavLink>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center hidden lg:flex flex-wrap">
                     <ul className="menu menu-horizontal px-1">{navLinks}</ul>
                 </div>
                 <div className="navbar-end">

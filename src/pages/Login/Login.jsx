@@ -124,30 +124,32 @@ const Login = () => {
                 <form
                     onSubmit={handleLogin}
                     className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content bg-opacity-30 p-2 md:p-6 lg:p-10  rounded-xl my-12 animate_animated animate_zoomInUp">
-                    <h2 className="text-3xl my-10 text-center animate_animated animate_bounceInDown">
+                    <h2 className="text-3xl font-bold text-black my-10 text-center animate_animated animate_bounceInDown">
                         Login your account
                     </h2>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Email address</span>
+                            <span className="label-text font-semibold text-lg text-black">Email address</span>
                         </label>
                         <input
                             type="email"
                             name="email"
                             placeholder="Enter your email address"
-                            className="input input-bordered"
+                           className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+
                             required
                         />
                     </div>
                     <div className="form-control relative">
                         <label className="label">
-                            <span className="label-text">Password</span>
+                            <span className="label-text font-semibold text-lg text-black">Password</span>
                         </label>
                         <input
                             type={showPassword ? "text" : "password"}
                             name="password"
                             placeholder="Enter your password"
-                            className="input input-bordered"
+                           className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400"
+
                             required
                         />
                         <span
@@ -162,18 +164,18 @@ const Login = () => {
                         <label className="label">
                             <a
                                 href="#"
-                                className="label-text-alt link link-hover">
+                                className="label-text text-black font-semibold text-base text-black-alt link link-hover">
                                 Forgot password?
                             </a>
                         </label>
                     </div>
                     {loginError && <p className="text-red-500">{loginError}</p>}
                     <div className="form-control mt-6">
-                        <button className="btn btn-ghost  btn-outline bg-[#23BE0A] border-none">
+                        <button className="btn btn-ghost text-lg font-semibold text-black btn-outline bg-[#23BE0A] border-none">
                             Login
                         </button>
                     </div>
-                    <p className="text-center mt-4 animate_animated animate_fadeInBottomLeft">
+                    <p className="text-center text-lg text-black font-medium mt-4 animate_animated animate_fadeInBottomLeft">
                         Don&apos;t have an account?{" "}
                         <Link
                             className=" text-blue-600 font-bold underline pl-1"
@@ -185,13 +187,13 @@ const Login = () => {
                     <div className="flex gap-4 justify-center animate_animated  animate_fadeInBottomRight">
                         <button
                             onClick={handleGoogleLogin}
-                            className="btn btn-outline btn-ghost">
+                            className="btn btn-outline btn-ghost text-black text-lg font-semibold">
                             <FaGoogle className="text-2xl" />
                             Login With Google
                         </button>
                         <button
                             onClick={handleGithubLogin}
-                            className="btn btn-outline btn-ghost">
+                            className="btn btn-outline btn-ghost text-lg text-black font-semibold">
                             <FaGithub className="text-2xl" />
                             Login With Github
                         </button>

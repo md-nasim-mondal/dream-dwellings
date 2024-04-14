@@ -29,7 +29,7 @@ const EstateDetails = () => {
                 <title>DreamDwellings-Estate-Details: {estateId} </title>
                 <link rel="icon" type="image/svg+xml" href={Icon} />
             </Helmet>
-                <h2 className="lg:text-4xl">
+                <h2 className="lg:text-4xl text-black">
                     Segment:{" "}
                     <span className="text-[#23BE0A]">#{segment_name}</span>
                 </h2>
@@ -40,17 +40,17 @@ const EstateDetails = () => {
                 />
 
                 <div>
-                    <div className="flex items-center flex-wrap animate__animated animate__bounceInRight justify-between text-xl font-semibold md:gap-6 lg:gap-8 mb-3 mt-4">
+                    <div className="flex items-center flex-wrap animate__animated animate__bounceInRight justify-between text-xl font-semibold md:gap-6 lg:gap-8 mb-3 mt-4 text-black">
                     <i className="card-title lg:text-3xl text-[#FF5733] animate__animated animate__bounceInRight  items-center pb-4">
                         #{estate_title}
                     </i>
                         <i>Area : {area}</i>
                     </div>
-                    <div className="animate__animated animate__fadeInBottomRight text-lg lg:text-2xl font-semibold gap-4 my-6">
+                    <div className="animate__animated animate__fadeInBottomRight text-black text-lg lg:text-2xl font-semibold gap-4 my-6">
                         <i>Location : {location}</i>
                     </div>
                     <div>
-                    <div className="flex justify-between items-center flex-wrap gap-5 text-xl animate__animated animate__bounceIn my-5 font-semibold">
+                    <div className="flex justify-between items-center flex-wrap gap-5 text-black text-xl animate__animated animate__bounceIn my-5 font-semibold">
                             <h2>
                             Status :{" "} For
                             <span className="bg-orange-600 ml-2 text-white px-6 py-2 rounded-xl">
@@ -75,7 +75,7 @@ const EstateDetails = () => {
                         </div>
                     </div>
 
-                    <div className="animate__animated animate__fadeInBottomRight text-lg lg:text-2xl font-semibold gap-4 my-6">
+                    <div className="animate__animated animate__fadeInBottomRight text-black text-lg lg:text-2xl font-semibold gap-4 my-6">
                         <i>Description : </i>
                     </div>
 
