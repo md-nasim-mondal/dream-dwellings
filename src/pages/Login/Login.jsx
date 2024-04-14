@@ -88,7 +88,7 @@ const Login = () => {
                 // navigate(location.state)
                 navigate(location?.state ? location.state : "/");
                 Swal.fire({
-                    text: "LogIn Successfully With Google!!",
+                    text: "LogIn Successfully With Github!!",
                     icon: "success",
                     showConfirmButton: false,
                     position: "top-right",

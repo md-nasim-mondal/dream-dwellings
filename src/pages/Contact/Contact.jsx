@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { IoMdContact } from "react-icons/io";
 import { toast } from "react-toastify";
+import Bg from "../../assets/images/bg-6.jpg";
 import { AuthContext } from "../../providers/AuthProvider";
 import Icon from "../../assets/logo/contact-book-svgrepo-com.svg";
 import "animate.css";
@@ -34,12 +35,13 @@ const Contact = () => {
     };
 
     return (
-        <div className="mb-12 py-16 lg:py-32">
+        <div className="mb-12 py-16 lg:py-32  md:min-h-[60vh]  bg-cover bg-center bg-no-repeat bg-opacity-60   shadow-lg my-12  rounded-3xl"
+        style={{ backgroundImage: `url(${Bg})` }}>
             <Helmet>
                 <title>DreamDwellings || Contact</title>
                 <link rel="icon" type="image/svg+xml" href={Icon} />
             </Helmet>
-            <h1 className="text-2xl md:text-5xl flex items-center font-bold text-black animate__animated animate__backInDown">
+            <h1 className="text-2xl md:text-5xl flex items-center font-bold text-blue-500  animate__animated animate__backInDown">
                 <IoMdContact className="text-7xl text-blue-600" /> Contact With
                 Us
             </h1>
