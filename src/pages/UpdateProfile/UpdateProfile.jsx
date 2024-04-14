@@ -5,12 +5,13 @@ import "react-toastify/dist/ReactToastify.css";
 import { getAuth, updateProfile } from "firebase/auth";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import 'animate.css'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import Bg from "../../assets/images/bg-1.jpg";
+import Icon from "../../assets/logo/update-profile-user.svg";
+import "animate.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 AOS.init();
-
-
 
 const auth = getAuth();
 
@@ -60,62 +61,76 @@ const UpdateProfile = () => {
             });
     };
     return (
-        <div className=" animate_animated animate_zoomInDown">
-            <form 
-            data-aos="flip-right"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="1600" 
-                onSubmit={handleUpdate}
-                className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-gradient-to-b from-purple-400 to-purple-600 p-6 rounded-xl my-10 animate_animated animate_rollIn ">
-                <h2  data-aos="zoom-out-right"
-     data-aos-duration="2000"  className="text-4xl my-8 text-center text-white font-bold">
-                    Update Your Profile
-                </h2>
-                <div>
-                    <p className="text-lg text-center">
-                        Please First Clear Your Old Information than Write New
-                        Information
-                    </p>
-                </div>
-                <div className="form-control mb-4">
-                    <label htmlFor="userName" className="label">
-                        <span className="label-text text-white">Your Name</span>
-                    </label>
-                    <input
-                        type="text"
-                        name="userName"
-                        id="userName"
-                        placeholder="Enter your new name"
-                        className="input input-bordered"
-                        defaultValue={user.displayName}
-                        contentEditable="true"
-                        required
-                    />
-                </div>
-                <div className="form-control mb-4">
-                    <label htmlFor="userPhoto" className="label">
-                        <span className="label-text text-white">
-                            Your Photo URL
-                        </span>
-                    </label>
-                    <input
-                        type="url"
-                        name="userPhoto"
-                        id="userPhoto"
-                        placeholder="Enter your new photo URL"
-                        className="input input-bordered"
-                        defaultValue={user.photoURL}
-                        required
-                    />
-                </div>
-                <div className="form-control">
-                    <button type="submit" className="btn btn-primary w-full">
-                        Update Profile
-                    </button>
-                </div>
-            </form>
+        <div
+            className="p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat bg-opacity-60 my-10 flex flex-col justify-center"
+            style={{ backgroundImage: `url(${Bg})` }}>
+            <Helmet>
+                <title>DreamDwellings-User-Update-Profile</title>
+                <link rel="icon" type="image/svg+xml" href={Icon} />
+            </Helmet>
+            <div className=" animate_animated animate_zoomInDown">
+                <form
+                    data-aos="flip-right"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="1600"
+                    onSubmit={handleUpdate}
+                    className=" animate_animated animate_rollIn card-body md:w-3/4 lg:w-1/2 mx-auto bg-gradient-to-b from-purple-400 to-purple-600 p-6 rounded-xl my-10">
+                    <h2
+                        data-aos="zoom-out-right"
+                        data-aos-duration="2000"
+                        className="text-4xl my-8 text-center text-white font-bold">
+                        Update Your Profile
+                    </h2>
+                    <div>
+                        <p className="text-lg text-center">
+                            Please First Clear Your Old Information than Write
+                            New Information
+                        </p>
+                    </div>
+                    <div className="form-control mb-4">
+                        <label htmlFor="userName" className="label">
+                            <span className="label-text text-white">
+                                Your Name
+                            </span>
+                        </label>
+                        <input
+                            type="text"
+                            name="userName"
+                            id="userName"
+                            placeholder="Enter your new name"
+                            className="input input-bordered"
+                            defaultValue={user.displayName}
+                            contentEditable="true"
+                            required
+                        />
+                    </div>
+                    <div className="form-control mb-4">
+                        <label htmlFor="userPhoto" className="label">
+                            <span className="label-text text-white">
+                                Your Photo URL
+                            </span>
+                        </label>
+                        <input
+                            type="url"
+                            name="userPhoto"
+                            id="userPhoto"
+                            placeholder="Enter your new photo URL"
+                            className="input input-bordered"
+                            defaultValue={user.photoURL}
+                            required
+                        />
+                    </div>
+                    <div className="form-control">
+                        <button
+                            type="submit"
+                            className="btn btn-primary w-full">
+                            Update Profile
+                        </button>
+                    </div>
+                </form>
 
-            <ToastContainer />
+                <ToastContainer />
+            </div>
         </div>
     );
 };

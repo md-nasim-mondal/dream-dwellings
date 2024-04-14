@@ -1,7 +1,9 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import Icon from "../../assets/logo/details-media-multimedia-svgrepo-com.svg";
 import 'animate.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from "react-helmet-async";
 AOS.init();
 
 const EstateDetails = () => {
@@ -23,14 +25,10 @@ const EstateDetails = () => {
     return (
         <div>
             <div className="flex flex-col container mx-auto p-6 space-y-6 overflow-hidden rounded-lg lg:mt-6">
-                {/* <Helmet>
-                    <link
-                        rel="icon"
-                        type="image/svg+xml"
-                        href="/src/assets/images/details.png"
-                    />
-                    <title>Estate Details : {id}</title>
-                </Helmet> */}
+            <Helmet>
+                <title>DreamDwellings-Estate-Details: {estateId} </title>
+                <link rel="icon" type="image/svg+xml" href={Icon} />
+            </Helmet>
                 <h2 className="lg:text-4xl">
                     Segment:{" "}
                     <span className="text-[#23BE0A]">#{segment_name}</span>

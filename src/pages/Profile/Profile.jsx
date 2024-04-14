@@ -2,9 +2,12 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaRegEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Bg from "../../assets/images/bg-3.jpg";
+import Icon from "../../assets/logo/user-profile.svg";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 AOS.init();
 
 const Profile = () => {
@@ -22,13 +25,20 @@ const Profile = () => {
         const photoURL = user?.photoURL;
         const emailVerified = user?.emailVerified;
         const uid = user?.uid;
+        
 
         return (
-            <div className="flex items-center justify-center md:min-h-[80vh]  bg-gray-100 shadow-lg my-12 border-4 border-gray-100 rounded-3xl">
-                <div 
-            data-aos="flip-left"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="1600"  className="card w-[550px] bg-gradient-to-r from-purple-500 to-indigo-600 shadow-lg my-12 mx-auto border-2 border-purple-700 rounded-xl animate_animated animate_rotateRight ">
+            <div className="flex items-center justify-center md:min-h-[80vh]  bg-cover bg-center bg-no-repeat bg-opacity-60   shadow-lg my-12  rounded-3xl"
+            style={{ backgroundImage: `url(${Bg})` }}>
+            <Helmet>
+                <title>DreamDwellings-User-Profile</title>
+                <link rel="icon" type="image/svg+xml" href={photoURL || Icon } />
+            </Helmet>
+                <div
+                    data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="1600"
+                    className="card w-[550px] bg-gradient-to-r from-purple-500 to-indigo-600 shadow-lg my-12 mx-auto  rounded-xl animate_animated animate_rotateRight ">
                     <div>
                         <div className="text-xl justify-end flex items-center text-white gap-2 pr-2 pt-2">
                             Edit Profile{" "}

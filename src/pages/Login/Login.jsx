@@ -3,9 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
+import Bg from "../../assets/images/bg-4.jpg";
+import Icon from "../../assets/logo/login-3-svgrepo-com.svg";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 AOS.init();
 
 const Login = () => {
@@ -107,11 +110,20 @@ const Login = () => {
         <div
             data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
-            data-aos-duration="1600">
-            <div>
+            data-aos-duration="1600"
+            className="p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat md:h-screen bg-opacity-60 my-10"
+            style={{ backgroundImage: `url(${Bg})` }}>
+            <Helmet>
+                <title>DreamDwellings-User-Login</title>
+                <link rel="icon" type="image/svg+xml" href={Icon} />
+            </Helmet>
+            <div
+                data-aos="flip-down"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="1600">
                 <form
                     onSubmit={handleLogin}
-                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content p-2 md:p-6 lg:p-10  rounded-xl my-12 animate_animated animate_zoomInUp">
+                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content bg-opacity-30 p-2 md:p-6 lg:p-10  rounded-xl my-12 animate_animated animate_zoomInUp">
                     <h2 className="text-3xl my-10 text-center animate_animated animate_bounceInDown">
                         Login your account
                     </h2>

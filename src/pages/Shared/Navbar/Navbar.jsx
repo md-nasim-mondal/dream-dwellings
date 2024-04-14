@@ -15,8 +15,6 @@ const Navbar = () => {
     const displayName = user?.displayName;
     const navigate = useNavigate();
 
-    
-
     const handleSignOut = () => {
         logOut()
             .then(() => {
@@ -42,7 +40,7 @@ const Navbar = () => {
 
     const navLinks = (
         <>
-            <p>
+            <li>
                 <NavLink
                     className={({ isActive }) =>
                         !isActive
@@ -52,10 +50,10 @@ const Navbar = () => {
                     to="/">
                     Home
                 </NavLink>
-            </p>
+            </li>
             {user && (
                 <>
-                    <p>
+                    <li>
                         <NavLink
                             className={({ isActive }) =>
                                 !isActive
@@ -65,8 +63,8 @@ const Navbar = () => {
                             to="/updateProfile">
                             Update Profile
                         </NavLink>
-                    </p>
-                    <p>
+                    </li>
+                    <li>
                         <NavLink
                             className={({ isActive }) =>
                                 !isActive
@@ -76,10 +74,10 @@ const Navbar = () => {
                             to="/profile">
                             UserProfile
                         </NavLink>
-                    </p>
+                    </li>
                 </>
             )}
-            <p>
+            <li>
                 <NavLink
                     className={({ isActive }) =>
                         !isActive
@@ -89,53 +87,47 @@ const Navbar = () => {
                     to="/reviews">
                     Customer Reviews
                 </NavLink>
-            </p>
-            <p>
+            </li>
+            <li>
                 <NavLink
                     className={({ isActive }) =>
                         !isActive
-                            ? "btn lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
+                            ? "btn z-[50] lg:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2 lg:mb-0 md:mr-2"
                             : "btn  btn-outline lg:text-lg bg-[#23BE0A] border-none btn-ghost mb-2 lg:mb-0 md:mr-2"
                     }
                     to="/contact">
                     Contact Us
                 </NavLink>
-            </p>
+            </li>
         </>
     );
     return (
-        <div
-            data-aos="fade-left"
-            data-aos-anchor="#example-anchor"
-            data-aos-offset="500"
-            data-aos-duration="1000">
-            <div className="navbar bg-base-100">
+        <div>
+            <div className="navbar bg-gray-300 rounded-3xl md:p-4 ">
                 <div className="navbar-start">
-                    <div className="dropdown relative">
+                    <div className="dropdown">
                         <div
                             tabIndex={0}
-                            onClick={() => setOpen(!open)}
                             role="button"
-                            className="btn-ghost lg:hidden">
+                            onClick={() => setOpen(!open)}
+                            className="btn btn-ghost lg:hidden">
                             {open ? (
                                 <IoClose className="text-2xl" />
                             ) : (
                                 <IoMenu className="text-2xl" />
                             )}
                         </div>
-                        <div className="menu menu-sm dropdown-content absolute z-10 lg:hidden mt-3 md:mt-5 ">
-                            <div
-                                className={`list-none p-4 shadow bg-gray-200
-                        ${
-                            open ? "" : "hidden"
-                        } rounded-box w-auto flex flex-col`}>
-                                {navLinks}
-                            </div>
-                        </div>
+                        <ul
+                            tabIndex={0}
+                            className={`menu menu-sm dropdown-content absolute mt-3 z-[50] p-2 shadow
+                            ${open ? "" : "hidden"}
+                             bg-base-100 rounded-box w-52`}>
+                            {navLinks}
+                        </ul>
                     </div>
                     <NavLink className="btn-ghost md:text-3xl">
                         <img
-                            className="w-20 md:w-24 lg:w-40"
+                            className="w-20 md:w-24 lg:w-40 text-blue-600"
                             src="/public/logo3.svg"
                             alt=""
                         />

@@ -9,7 +9,7 @@ AOS.init();
 
 const Root = () => {
     return (
-        <div className="mx-auto font-poppins">
+        <div className="mx-auto font-poppins bg-gray-200">
             <div className="container mx-auto">
             <Navbar></Navbar>
             <Outlet></Outlet>

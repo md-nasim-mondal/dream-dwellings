@@ -6,13 +6,16 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Bg from "../../assets/images/bg-2.jpg";
+import Icon from "../../assets/logo/register-svgrepo-com.svg";
 import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Helmet } from "react-helmet-async";
 AOS.init();
 
 const Register = () => {
-    const { createUser, setUser, logOut, loading } = useContext(AuthContext);
+    const { createUser, setUser, logOut } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
@@ -70,20 +73,30 @@ const Register = () => {
     };
     return (
         <div
-            data-aos="flip-down"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="1000"
-            className="p-4 md:p-0">
-            <div>
+        data-aos="flip-down"
+        data-aos-easing="ease-in-cubic"
+        data-aos-duration="1500"
+            className="p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat md:h-screen bg-opacity-60"
+            style={{ backgroundImage: `url(${Bg})` }}>
+            <Helmet>
+                <title>DreamDwellings-User-Register</title>
+                <link rel="icon" type="image/svg+xml" href={Icon} />
+            </Helmet>
+            <div
+            data-aos="flip-up"
+            data-aos-easing="ease-in-cubic"
+            data-aos-duration="2500">
                 <form
                     onSubmit={handleRegister}
-                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-gradient-to-b from-green-400 to-green-600 p-6 rounded-xl my-12 animate_animated animate_fadeInBottomRight">
-                    <h2 className="text-4xl my-10 text-center text-white font-bold animate_animated animate_backInUp">
+                    className=" animate_animated animate_fadeInBottomRight card-body md:w-3/4 lg:w-1/2 mx-auto  p-6 rounded-xl my-12 bg-gray-100 bg-opacity-20">
+                    <h2 className=" animate_animated animate_backInUp text-4xl my-4 text-center text-white font-bold">
                         Register Your Account
                     </h2>
-                    <div className="form-control mb-4">
+                    <div className="form-control">
                         <label className="label block font-semibold">
-                            <span className="label-text text-white">Your Name</span>
+                            <span className="label-text text-white">
+                                Your Name
+                            </span>
                         </label>
                         <input
                             type="text"
@@ -93,7 +106,7 @@ const Register = () => {
                             required
                         />
                     </div>
-                    <div className="form-control mb-4">
+                    <div className="form-control">
                         <label className="label block font-semibold">
                             <span className="label-text text-white">
                                 Email Address
@@ -107,7 +120,7 @@ const Register = () => {
                             required
                         />
                     </div>
-                    <div className="form-control mb-4">
+                    <div className="form-control">
                         <label className="label block font-semibold">
                             <span className="label-text text-white">
                                 Photo URL
@@ -121,7 +134,7 @@ const Register = () => {
                             required
                         />
                     </div>
-                    <div className="form-control relative mb-4">
+                    <div className="form-control relative">
                         <label className="label block font-semibold">
                             <span className="label-text text-white">
                                 Password
@@ -159,7 +172,7 @@ const Register = () => {
                         </label>
                     </div>
                     <div className="form-control my-4">
-                        <button className="btn btn-ghost btn-outline text-white bg-blue-500 border-blue-500 ">
+                        <button className="btn btn-ghost btn-outline text-white bg-green-500 border-none ">
                             Register
                         </button>
                     </div>
@@ -168,7 +181,7 @@ const Register = () => {
                         <br /> Or <br />
                         Want to login with a social account?
                         <br />
-                        Then Go to
+                        Than Go to
                         <Link
                             className="text-blue-600 font-bold ml-2"
                             to={"/login"}>

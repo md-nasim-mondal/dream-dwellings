@@ -3,9 +3,11 @@ import { FaFacebookMessenger, FaFacebookSquare, FaInstagramSquare, FaLinkedinIn,
 import { IoMdContact } from "react-icons/io";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../providers/AuthProvider";
+import Icon from "../../assets/logo/contact-book-svgrepo-com.svg";
 import 'animate.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from "react-helmet-async";
 AOS.init();
 
 const Contact = () => {
@@ -26,6 +28,10 @@ const Contact = () => {
 
     return (
         <div className="mb-12">
+        <Helmet>
+                <title>DreamDwellings || Contact</title>
+                <link rel="icon" type="image/svg+xml" href={Icon} />
+            </Helmet>
             <h1 className="text-2xl md:text-5xl flex items-center font-bold"><IoMdContact className="text-7xl text-blue-600" /> Contact With Us</h1>
             <div className="flex flex-col md:flex-row justify-center gap-8 mt-12">
                 <div className="flex flex-col md:w-[40%] gap-6">
