@@ -46,10 +46,10 @@ const Sliders = () => {
                                 <h1 className="mb-5 animate_animated animate_backInDown text-white text-3xl md:text-4xl lg:text-6xl font-bold md:leading-[40px]  lg:leading-[76px]">
                                 Welcome to DreamDwellings: Where Your Home Dreams Come True!
                                 </h1>
-                                <p className="mb-5 font-medium text-black animate_animated animate_bounceInLeft">
+                                <p className="mb-5 font-medium text-white animate_animated animate_bounceInLeft">
                                 Embark on a journey to turn your home dreams into reality with DreamDwellings. Explore our exquisite collection of residences designed to fulfill every aspiration and desire. Welcome home to the place where dreams find their address.
                                 </p>
-                                <button className="btn btn-ghost btn-outline text-black text-lg font-bold ">
+                                <button className="btn btn-ghost btn-outline text-white text-lg font-bold ">
                                     Explore Now
                                 </button>
                             </div>
@@ -68,10 +68,10 @@ const Sliders = () => {
                                 <h1 className="mb-5 animate_animated animate_backInDown text-white text-3xl md:text-4xl lg:text-6xl font-bold md:leading-[40px]  lg:leading-[76px]">
                                 Discover Your Perfect Haven: Explore DreamDwellings Today!
                                 </h1>
-                                <p  className="mb-5 font-medium text-black animate_animated animate_bounceInLeft">
+                                <p  className="mb-5 font-medium text-white animate_animated animate_bounceInLeft">
                                 Discover the haven you&apos;ve been longing for with DreamDwellings. Explore our diverse range of homes crafted to perfection. Your perfect sanctuary awaits - start your exploration today!
                                 </p>
-                                <button className="btn btn-ghost btn-outline text-black text-lg font-bold ">
+                                <button className="btn btn-ghost btn-outline text-white text-lg font-bold ">
                                     Explore Now
                                 </button>
                             </div>
@@ -90,10 +90,10 @@ const Sliders = () => {
                                 <h1 className="mb-5 animate_animated animate_backInDown text-white text-3xl md:text-4xl lg:text-6xl font-bold md:leading-[40px]  lg:leading-[76px]">
                                 Unlock the Door to Your Dream Home: DreamDwellings Welcomes You!
                                 </h1>
-                                <p  className="mb-5 font-medium text-black animate_animated animate_bounceInLeft">
+                                <p  className="mb-5 font-medium text-white animate_animated animate_bounceInLeft">
                                 Ready to unlock the door to your dream home? DreamDwellings extends a warm welcome. Experience the joy of finding your perfect abode among our stunning collection. Your dream home is just a step away.
                                 </p>
-                                <button className="btn btn-ghost btn-outline text-black text-lg font-bold ">
+                                <button className="btn btn-ghost btn-outline text-white text-lg font-bold ">
                                     Explore Now
                                 </button>
                             </div>
@@ -112,10 +112,10 @@ const Sliders = () => {
                                 <h1 className="mb-5 animate_animated animate_backInDown text-white text-3xl md:text-4xl lg:text-6xl font-bold md:leading-[40px]  lg:leading-[76px]">
                                 Step into Serenity: DreamDwellings - Your Gateway to Home Bliss!
                                 </h1>
-                                <p  className="mb-5 font-medium text-black animate_animated animate_bounceInLeft">
+                                <p  className="mb-5 font-medium text-white animate_animated animate_bounceInLeft">
                                 Step into a realm of serenity with DreamDwellings. Our homes are your gateway to blissful living, offering peace, comfort, and unparalleled beauty. Welcome to your new haven of tranquility
                                 </p>
-                                <button className="btn btn-ghost btn-outline text-black text-lg font-bold ">
+                                <button className="btn btn-ghost btn-outline text-white text-lg font-bold ">
                                     Explore Now
                                 </button>
                             </div>
@@ -134,10 +134,10 @@ const Sliders = () => {
                                 <h1 className="mb-5 animate_animated animate_backInDown text-white text-3xl md:text-4xl lg:text-6xl font-bold md:leading-[40px]  lg:leading-[76px]">
                                 Embrace Luxury Living: DreamDwellings Presents Your Dream Abode!
                                 </h1>
-                                <p  className="mb-5 font-medium text-black animate_animated animate_bounceInLeft">
+                                <p  className="mb-5 font-medium text-white animate_animated animate_bounceInLeft">
                                 Embrace the epitome of luxury living with DreamDwellings. Indulge in the finest residences meticulously crafted for your comfort and pleasure. Your dream abode awaits your gracious presence.
                                 </p>
-                                <button className="btn btn-ghost btn-outline text-black text-lg font-bold ">
+                                <button className="btn btn-ghost btn-outline text-white text-lg font-bold ">
                                     Explore Now
                                 </button>
                             </div>
