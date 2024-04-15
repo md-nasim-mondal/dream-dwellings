@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -12,13 +12,18 @@ import "animate.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet-async";
-AOS.init();
+// AOS.init();
 
 const Register = () => {
     const { createUser, setUser, logOut } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
+    useEffect(() => {
+        AOS.init({
+          disable: 'mobile'
+        });
+      }, []);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -76,7 +81,7 @@ const Register = () => {
             data-aos="flip-down"
             data-aos-easing="ease-in-cubic"
             data-aos-duration="1500"
-            className="p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat md:h-screen bg-opacity-60 my-16"
+            className="w-[94%] md:w-full mx-auto p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat md:min-h-screen bg-opacity-60 my-16"
             style={{ backgroundImage: `url(${Bg})` }}>
             <Helmet>
                 <title>DreamDwellings-User-Register</title>
@@ -85,11 +90,13 @@ const Register = () => {
             <div
                 data-aos="flip-up"
                 data-aos-easing="ease-in-cubic"
-                data-aos-duration="2500">
+                data-aos-duration="2500"
+                className=" md:ease-in-cubic md:duration-2500"
+                >
                 <form
                     onSubmit={handleRegister}
-                    className=" animate__animated animate_fadeInBottomRight animate__delay-5s card-body md:w-3/4 lg:w-1/2 mx-auto  p-6 rounded-xl my-12 bg-gray-100 bg-opacity-20">
-                    <h2 className=" animate__animated animate_backInUp text-4xl my-4 text-center text-white font-bold">
+                    className="card-body md:w-3/4 lg:w-1/2 mx-auto  p-6 rounded-xl my-12 bg-gray-100 bg-opacity-20">
+                    <h2 className="text-4xl my-4 text-center text-white font-bold">
                         Register Your Account
                     </h2>
                     <div className="form-control">

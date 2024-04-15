@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
     FaFacebookMessenger,
     FaFacebookSquare,
@@ -21,6 +21,14 @@ AOS.init();
 
 const Contact = () => {
     const { loading } = useContext(AuthContext);
+    const [shouldAnimate, setShouldAnimate] = useState(false);
+
+    useEffect(() => {
+        if (window.innerWidth >= 768) { // Medium devices and above
+            setShouldAnimate(true);
+            AOS.init();
+        }
+    }, []);
 
     if (loading) {
         return (
@@ -35,18 +43,18 @@ const Contact = () => {
     };
 
     return (
-        <div className="mb-12 py-16 lg:py-32  md:min-h-[60vh]  bg-cover bg-center bg-no-repeat bg-opacity-60   shadow-lg my-12  rounded-3xl"
+        <div className="w-[94%] md:w-full mx-auto mb-12 py-16 lg:py-32  md:min-h-[60vh]  bg-cover bg-center bg-no-repeat bg-opacity-60   shadow-lg my-12  rounded-3xl"
         style={{ backgroundImage: `url(${Bg})` }}>
             <Helmet>
                 <title>DreamDwellings || Contact</title>
                 <link rel="icon" type="image/svg+xml" href={Icon} />
             </Helmet>
-            <h1 className="text-2xl md:text-5xl flex items-center font-bold text-blue-500  animate__animated animate__backInDown">
+            <h1 className={`${shouldAnimate ? '  animate__animated animate__backInDown' : ''} text-2xl md:text-5xl flex items-center font-bold text-blue-500`}>
                 <IoMdContact className="text-7xl text-blue-600" /> Contact With
                 Us
             </h1>
             <div className="flex flex-col md:flex-row justify-center gap-8 mt-12">
-                <div className="flex flex-col md:w-[40%] gap-6 animate__animated animate__fadeInUpBig">
+                <div className={`${shouldAnimate ? 'animate__animated animate__fadeInUpBig' : ''} flex flex-col w-[94%] mx-auto md:w-[40%] gap-6 `}>
                     <input
                         type="text"
                         placeholder="Name"
@@ -72,10 +80,10 @@ const Contact = () => {
                     </button>
                 </div>
                 <div className="flex flex-col gap-4 items-center md:items-start">
-                    <h3 className="text-3xl text-black animate__animated animate__flip ">
+                    <h3 className={`${shouldAnimate ? ' animate__animated animate__flip ' : ''} text-3xl text-black`}>
                         Visit our social pages
                     </h3>
-                    <div className="animate__animated animate__rollIn text-4xl flex gap-4 text-blue-500">
+                    <div className={`${shouldAnimate ? 'animate__animated animate__rollIn ' : '' } text-4xl flex gap-4 text-blue-500`}>
                         <a href="#">
                             <FaFacebookSquare />
                         </a>
@@ -89,8 +97,8 @@ const Contact = () => {
                             <FaLinkedinIn />
                         </a>
                     </div>
-                    <h3 className="animate__animated animate__zoomInUp text-3xlb text-black">Chat With Us</h3>
-                    <div className="animate__animated animate__zoomInRight text-4xl flex gap-4 text-blue-500">
+                    <h3 className={`${shouldAnimate ? 'animate__animated animate__zoomInUp' : ''} text-3xlb text-black`}>Chat With Us</h3>
+                    <div className={`${shouldAnimate ? 'animate__animated animate__zoomInRight' : ''} text-4xl flex gap-4 text-blue-500`}>
                         <a href="#">
                             <FaFacebookMessenger />
                         </a>
@@ -101,7 +109,7 @@ const Contact = () => {
                             <FaTelegram />
                         </a>
                     </div>
-                    <div className="animate__animated animate__rollIn">
+                    <div className={`${shouldAnimate ? 'animate__animated animate__rollIn' : ''}`}>
                     <h3 className="text-3xl text-black">Call Our Hot-Lines</h3>
                     <a className="text-3xl text-black" href="#">
                         01699308-485

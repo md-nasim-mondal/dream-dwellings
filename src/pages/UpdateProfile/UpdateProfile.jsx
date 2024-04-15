@@ -62,7 +62,7 @@ const UpdateProfile = () => {
     };
     return (
         <div
-            className="p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat bg-opacity-60 my-10 flex flex-col justify-center"
+            className="w-[94%] md:w-full mx-auto p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat bg-opacity-60 my-10 flex flex-col justify-center"
             style={{ backgroundImage: `url(${Bg})` }}>
             <Helmet>
                 <title>DreamDwellings-User-Update-Profile</title>

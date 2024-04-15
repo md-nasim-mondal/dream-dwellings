@@ -111,7 +111,7 @@ const Login = () => {
             data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="1600"
-            className="p-4 md:p-8 rounded-3xl bg-cover bg-center bg-no-repeat md:h-screen bg-opacity-60 my-10"
+            className="p-4 md:p-8 w-[94%] md:w-full mx-auto rounded-3xl bg-cover bg-center bg-no-repeat md:min-h-screen bg-opacity-60 my-10"
             style={{ backgroundImage: `url(${Bg})` }}>
             <Helmet>
                 <title>DreamDwellings-User-Login</title>
@@ -123,7 +123,7 @@ const Login = () => {
                 data-aos-duration="1600">
                 <form
                     onSubmit={handleLogin}
-                    className="card-body md:w-3/4 lg:w-1/2 mx-auto bg-primary-content bg-opacity-30 p-2 md:p-6 lg:p-10  rounded-xl my-12 animate__animated animate_zoomInUp">
+                    className="card-body  md:w-3/4 lg:w-1/2 mx-auto bg-primary-content bg-opacity-30 p-2 md:p-6 lg:p-10  rounded-xl my-12 animate__animated animate_zoomInUp">
                     <h2 className=" animate__animated hover:animate__backInDown  text-3xl font-bold text-black my-10 text-center">
                         Login your account
                     </h2>
@@ -173,7 +173,7 @@ const Login = () => {
                     </div>
                     {loginError && <p className="text-red-500">{loginError}</p>}
                     <div className="form-control mt-6">
-                        <button className="btn btn-ghost w-full text-lg font-semibold text-black btn-outline bg-[#23BE0A] border-none hover:w-[50%] mx-auto">
+                        <button className="btn btn-ghost w-full text-lg font-semibold text-black btn-outline bg-[#23BE0A] border-none hover:md:w-[50%] mx-auto">
                             Login
                         </button>
                     </div>
@@ -186,7 +186,7 @@ const Login = () => {
                         </Link>{" "}
                     </p>
                     <h2 className="text-3xl font-bold text-center">Or</h2>
-                    <div className="flex gap-4 justify-center animate__animated  animate_fadeInBottomRight">
+                    <div className="flex flex-col md:flex-row gap-4 justify-center animate__animated  animate_fadeInBottomRight">
                         <button
                             onClick={handleGoogleLogin}
                             className="btn btn-outline btn-ghost text-black text-lg font-semibold">

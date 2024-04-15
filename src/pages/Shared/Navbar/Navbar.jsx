@@ -43,6 +43,7 @@ const Navbar = () => {
         <>
             <li>
                 <NavLink
+                    onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                         !isActive
                             ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
@@ -56,6 +57,7 @@ const Navbar = () => {
                 <>
                     <li>
                         <NavLink
+                            onClick={() => setOpen(false)}
                             className={({ isActive }) =>
                                 !isActive
                                     ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
@@ -67,6 +69,7 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink
+                            onClick={() => setOpen(false)}
                             className={({ isActive }) =>
                                 !isActive
                                     ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
@@ -80,6 +83,7 @@ const Navbar = () => {
             )}
             <li>
                 <NavLink
+                    onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                         !isActive
                             ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
@@ -91,6 +95,7 @@ const Navbar = () => {
             </li>
             <li>
                 <NavLink
+                    onClick={() => setOpen(false)}
                     className={({ isActive }) =>
                         !isActive
                             ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
@@ -122,7 +127,10 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className={`menu menu-sm dropdown-content absolute mt-3 z-[50] p-2 shadow
+                            //  dropdown-content
+                            className={`menu menu-sm
+                             absolute mt-3 z-[50] p-2 shadow 
+                             ${user ? "xl:hidden" : "lg:hidden"}
                             ${open ? "" : "hidden"}
                              bg-base-100 rounded-box w-52`}>
                             {navLinks}
@@ -165,7 +173,10 @@ const Navbar = () => {
                                 </div>
                             </div>
                             <button
-                                onClick={handleSignOut}
+                                onClick={() => {
+                                    setOpen(false);
+                                    handleSignOut();
+                                }}
                                 className="btn btn-sm md:btn-md ml-0.5 md:ml-4 text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]">
                                 LogOut
                             </button>
@@ -173,6 +184,7 @@ const Navbar = () => {
                     ) : (
                         <div className="flex flex-col md:flex-row gap-2">
                             <NavLink
+                                onClick={() => setOpen(false)}
                                 className={({ isActive }) =>
                                     !isActive
                                         ? "btn btn-sm md:btn-md mr-0.5 md:mr-4 text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
@@ -182,6 +194,7 @@ const Navbar = () => {
                                 <button>Login</button>
                             </NavLink>
                             <NavLink
+                                onClick={() => setOpen(false)}
                                 className={({ isActive }) =>
                                     !isActive
                                         ? "btn p btn-sm md:btn-md text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]"
