@@ -23,7 +23,7 @@ const Navbar = () => {
                     text: "LogOut Successful",
                     icon: "success",
                     showConfirmButton: false,
-                    position: "top-end",
+                    position: "top-center",
                     timer: 1500,
                 });
                 navigate("/");
@@ -33,7 +33,7 @@ const Navbar = () => {
                     text: `${error.message}`,
                     icon: "error",
                     showConfirmButton: false,
-                    position: "top-end",
+                    position: "top-center",
                     timer: 1500,
                 });
             });

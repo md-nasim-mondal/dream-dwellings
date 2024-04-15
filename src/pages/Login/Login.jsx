@@ -39,7 +39,7 @@ const Login = () => {
                     text: "LogIn Successfully!!",
                     icon: "success",
                     showConfirmButton: false,
-                    position: "top-end",
+                    position: "top-center",
                     timer: 1500,
                 });
             })
@@ -48,7 +48,7 @@ const Login = () => {
                     text: "Please Check Your Email and Password than Try Again!!",
                     icon: "error",
                     showConfirmButton: false,
-                    position: "top-end",
+                    position: "top-center",
                     timer: 1500,
                 });
                 setLoginError(error.message);
@@ -65,7 +65,7 @@ const Login = () => {
                     text: "LogIn Successfully With Google!!",
                     icon: "success",
                     showConfirmButton: false,
-                    position: "top-end",
+                    position: "top-center",
                     timer: 1500,
                 });
             })
@@ -74,7 +74,7 @@ const Login = () => {
                     text: "Please Check Your Email and Password than Try Again!!",
                     icon: "error",
                     showConfirmButton: false,
-                    position: "top-end",
+                    position: "top-center",
                     timer: 1500,
                 });
                 setLoginError(error.message);
@@ -91,7 +91,7 @@ const Login = () => {
                     text: "LogIn Successfully With Github!!",
                     icon: "success",
                     showConfirmButton: false,
-                    position: "top-end",
+                    position: "top-center",
                     timer: 1500,
                 });
             })
@@ -100,7 +100,7 @@ const Login = () => {
                     text: "Please Check Your Email and Password than Try Again!!",
                     icon: "error",
                     showConfirmButton: false,
-                    position: "top-end",
+                    position: "top-center",
                     timer: 1500,
                 });
                 setLoginError(error.message);

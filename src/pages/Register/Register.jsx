@@ -15,7 +15,7 @@ import { Helmet } from "react-helmet-async";
 // AOS.init();
 
 const Register = () => {
-    const { createUser, setUser, logOut } = useContext(AuthContext);
+    const { createUser, user, setUser, logOut } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
@@ -55,6 +55,7 @@ const Register = () => {
                 const presentUser = result.user;
                 setUser(presentUser);
                 updateProfile(presentUser, {
+                    ...user,
                     displayName: `${name}`,
                     photoURL: `${photo}`,
                 })
@@ -63,7 +64,7 @@ const Register = () => {
                             text: "Successfully Registered Now Please Login!!",
                             icon: "success",
                             showConfirmButton: false,
-                            position: "top-end",
+                            position: "top-center",
                             timer: 1500,
                         });
                         navigate(location?.state ? location.state : "/login");

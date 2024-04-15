@@ -40,6 +40,7 @@ const UpdateProfile = () => {
         })
             .then(() => {
                 setUser({
+                    ...user,
                     displayName: `${name}`,
                     photoURL: `${photo}`,
                     uid: `${uid}`,
@@ -51,7 +52,7 @@ const UpdateProfile = () => {
                     text: "Profile Successfully Updated Now See Your Profile",
                     icon: "success",
                     showConfirmButton: false,
-                    position: "top-end",
+                    position: "top-center",
                     timer: 1000,
                 });
                 navigate(location?.state ? location.state : "/profile");
