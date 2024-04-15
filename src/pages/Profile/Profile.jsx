@@ -14,7 +14,7 @@ const Profile = () => {
     const [shouldAnimate, setShouldAnimate] = useState(false);
 
     useEffect(() => {
-        if (window.innerWidth >= 768) { // Medium devices and above
+        if (window.innerWidth >= 768) { 
             setShouldAnimate(true);
             AOS.init();
         }
@@ -42,21 +42,21 @@ const Profile = () => {
                 </Helmet>
                 <div className={`card w-[320px] md:w-[550px] bg-gradient-to-r from-purple-500 to-indigo-600 shadow-lg my-12 mx-auto  rounded-xl ${shouldAnimate ? "animate__animated animate__delay-2s animate__flip" : ""}`}>
                     <div>
-                        <div className="text-xl justify-end flex items-center text-white gap-2 pr-2 pt-2">
+                        <div className={`${shouldAnimate ? 'animate__animated animate__backInLeft' : ''}  text-xl justify-end flex items-center text-white gap-2 pr-2 pt-2`}>
                             Edit Profile <Link to={"/updateProfile"}><FaRegEdit className="text-lime-600" /></Link>
                         </div>
                     </div>
                     <figure className="mt-6 flex justify-center">
-                        <img src={photoURL} alt="userImg" className="w-[200px] h-[200px] rounded-full border-4 border-white" />
+                        <img src={photoURL} alt="userImg" className={`${shouldAnimate ? 'animate__animated animate__fadeInDownBig' : '' } w-[200px] h-[200px] rounded-full border-4 border-white`} />
                     </figure>
                     <div className="card-body text-white">
-                        <h2 className="text-3xl text-center pt-5 text-white">User Information</h2>
-                        <h2 className="card-title text-xl mt-6">Name: {displayName}</h2>
-                        <p className="font-medium">Uid: {uid}</p>
-                        <p className="font-medium">Email Address: {email}</p>
-                        <p className="font-medium break-words">Photo URL: {photoURL}</p>
+                        <h2 className={`${shouldAnimate ? 'animate__animated animate__fadeInDownBig ' : ''}text-3xl text-center pt-5 text-white`}>User Information</h2>
+                        <h2 className={`${shouldAnimate ? 'animate__animated animate__wobble' : ''} card-title text-xl mt-6`}>Name: {displayName}</h2>
+                        <p className={`${shouldAnimate ? ' animate__animated animate__backInRight' : ''} font-medium`}>Uid: {uid}</p>
+                        <p className={`${shouldAnimate ? ' animate__animated animate__backInLeft' : ''} font-medium`}>Email Address: {email}</p>
+                        <p className={`${shouldAnimate ? ' animate__animated animate__backInRight' : ''} font-medium break-words`}>Photo URL: {photoURL}</p>
                         <div className="card-actions justify-end mt-4">
-                            <div className="badge bg-purple-500 border-2 border-black rounded-md py-3 px-4 text-lg font-semibold">
+                            <div className={`${shouldAnimate ? 'animate__animated animate__jackInTheBox' : ''} badge bg-purple-500 border-2 border-black rounded-md py-3 px-4 text-lg font-semibold`}>
                                 {emailVerified ? (
                                     <p className="font-semibold">Verified User</p>
                                 ) : (
