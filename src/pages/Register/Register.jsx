@@ -21,9 +21,9 @@ const Register = () => {
     const navigate = useNavigate();
     useEffect(() => {
         AOS.init({
-          disable: 'mobile'
+            disable: "mobile",
         });
-      }, []);
+    }, []);
 
     const handleRegister = (e) => {
         e.preventDefault();
@@ -63,7 +63,7 @@ const Register = () => {
                             text: "Successfully Registered Now Please Login!!",
                             icon: "success",
                             showConfirmButton: false,
-                            position: "top-right",
+                            position: "top-end",
                             timer: 1500,
                         });
                         navigate(location?.state ? location.state : "/login");
@@ -91,8 +91,7 @@ const Register = () => {
                 data-aos="flip-up"
                 data-aos-easing="ease-in-cubic"
                 data-aos-duration="2500"
-                className=" md:ease-in-cubic md:duration-2500"
-                >
+                className=" md:ease-in-cubic md:duration-2500">
                 <form
                     onSubmit={handleRegister}
                     className="card-body md:w-3/4 lg:w-1/2 mx-auto  p-6 rounded-xl my-12 bg-gray-100 bg-opacity-20">

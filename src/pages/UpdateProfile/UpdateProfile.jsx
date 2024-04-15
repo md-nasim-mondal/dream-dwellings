@@ -51,7 +51,7 @@ const UpdateProfile = () => {
                     text: "Profile Successfully Updated Now See Your Profile",
                     icon: "success",
                     showConfirmButton: false,
-                    position: "top-right",
+                    position: "top-end",
                     timer: 1000,
                 });
                 navigate(location?.state ? location.state : "/profile");
