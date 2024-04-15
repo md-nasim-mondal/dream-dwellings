@@ -16,6 +16,7 @@ DreamDwellings is an innovative online platform designed to revolutionize the wa
 - **Interactive User Interface**: Navigate through our user-friendly interface and discover your ideal home with ease.
 - **Mobile-friendly**: Access our website conveniently from any mobile device, ensuring you can search for properties on the go with ease.
 - **Trustworthy Resources**: Access reliable information and guidance throughout your real estate journey, ensuring you have the support you need to make informed decisions.
+- **Market Insights**: Stay informed about market trends and developments with our market insights, providing valuable information for buyers, sellers, and investors.
 
 ## Getting Started
 To start your journey with DreamDwellings Real Estate, simply visit our website [DreamDwellings.com](https://dreamdwellings-program.web.app/) and create an account. Once registered, you can explore properties, update your profile, and interact with our platform effortlessly.

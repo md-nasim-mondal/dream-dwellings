@@ -24,7 +24,7 @@ const Contact = () => {
     const [shouldAnimate, setShouldAnimate] = useState(false);
 
     useEffect(() => {
-        if (window.innerWidth >= 768) { // Medium devices and above
+        if (window.innerWidth >= 768) { 
             setShouldAnimate(true);
             AOS.init();
         }
