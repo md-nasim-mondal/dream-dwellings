@@ -10,6 +10,7 @@ import EstateDetails from "../components/EstateDetails/EstateDetails";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Contact from "../pages/Contact/Contact";
 import CustomerReviews from "../pages/CustomerReviews/CustomerReviews";
+import SavedProperties from "../pages/SavedProperties/SavedProperties";
 
 const router = createBrowserRouter([
     {
@@ -56,17 +57,21 @@ const router = createBrowserRouter([
             },
             {
                 path: "/contact",
-                element: (
-                    <PrivateRoute>
-                        <Contact></Contact>
-                    </PrivateRoute>
-                ),
+                element: <Contact></Contact>,
             },
             {
                 path: "/reviews",
                 element: (
                     <PrivateRoute>
                         <CustomerReviews></CustomerReviews>,
+                    </PrivateRoute>
+                ),
+            },
+            {
+                path: "/savedProperties",
+                element: (
+                    <PrivateRoute>
+                        <SavedProperties></SavedProperties>,
                     </PrivateRoute>
                 ),
             },

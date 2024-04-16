@@ -53,6 +53,18 @@ const Navbar = () => {
                     Home
                 </NavLink>
             </li>
+            <li>
+                <NavLink
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                        !isActive
+                            ? "btn z-[50] xl:text-lg font-semibold btn-outline bg-none border-solid border border-[#23BE0A] rounded-lg text-[#23BE0A]  mb-2  md:mr-2"
+                            : "btn  btn-outline xl:text-lg text-black bg-[#23BE0A] border-none btn-ghost mb-2  md:mr-2"
+                    }
+                    to="/savedProperties">
+                    Saved Properties
+                </NavLink>
+            </li>
             {user && (
                 <>
                     <li>
@@ -81,6 +93,7 @@ const Navbar = () => {
                     </li>
                 </>
             )}
+
             <li>
                 <NavLink
                     onClick={() => setOpen(false)}
