@@ -130,7 +130,7 @@ const Navbar = () => {
                             role="button"
                             onClick={() => setOpen(!open)}
                             className={`btn-ghost 
-                            ${user ? "xl:hidden" : "lg:hidden"}
+                            ${user ? "2xl:hidden" : "lg:hidden"}
                             `}>
                             {open ? (
                                 <IoClose className="text-2xl" />
@@ -143,13 +143,15 @@ const Navbar = () => {
                             //  dropdown-content
                             className={`menu menu-sm
                              absolute mt-3 z-[50] p-2 shadow 
-                             ${user ? "xl:hidden" : "lg:hidden"}
+                             ${user ? "2xl:hidden" : "lg:hidden"}
                             ${open ? "" : "hidden"}
                              bg-base-100 rounded-box w-52`}>
                             {navLinks}
                         </ul>
                     </div>
-                    <NavLink className="animate__animated animate__backInRight btn-ghost md:text-2xl xl:text-3xl flex gap-2 text-black items-center font-bold flex-wrap">
+                    <NavLink
+                        onClick={() => setOpen(false)}
+                        className="animate__animated animate__backInRight btn-ghost md:text-2xl rounded-2xl xl:text-3xl flex gap-2 text-black items-center font-bold flex-wrap">
                         <img
                             className="w-10 lg:w-12 xl:w-14"
                             src={Logo}
@@ -163,7 +165,7 @@ const Navbar = () => {
                 </div>
                 <div
                     className={`animate__animated animate__backInUp navbar-center hidden 
-                ${user ? "xl:flex" : "lg:flex"}
+                ${user ? "2xl:flex" : "lg:flex"}
                 `}>
                     <ul className="menu menu-horizontal px-1">{navLinks}</ul>
                 </div>

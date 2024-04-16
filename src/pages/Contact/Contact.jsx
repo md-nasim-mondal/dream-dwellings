@@ -79,7 +79,7 @@ const Contact = () => {
                         Send
                     </button>
                 </div>
-                <div className="flex flex-col gap-4 items-center md:items-start pr-8">
+                <div className="flex flex-col gap-4 items-center md:items-start md:pr-8">
                     <h3 className={`${shouldAnimate ? ' animate__animated animate__flip ' : ''} text-3xl text-black`}>
                         Visit our social pages
                     </h3>
