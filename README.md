@@ -10,6 +10,7 @@ DreamDwellings is an innovative online platform designed to revolutionize the wa
 - **Animation Effects**: Enjoy smooth and eye-catching animations throughout the website, powered by Animate CSS and AOS.
 - **User Profiles**: Create a personalized profile where you can manage your preferences and interact with the platform.
 - **Update Profile**: Easily update your profile information, including your name and photo URL, to keep your account up-to-date.
+- - **Save Properties**: Save your favorite properties for later viewing, allowing you to compare and revisit them at your convenience.
 - **Authentication Options**: Register and login using traditional methods or streamline the process by logging in with your GitHub or Google account.
 - **Property Listings**: Explore a diverse range of residential estates with detailed information, including photos, descriptions, and amenities.
 - **Property Details**: Dive deep into property details, including floor plans, nearby attractions, and neighborhood insights, to make informed decisions.
